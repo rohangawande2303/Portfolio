@@ -10,3 +10,29 @@
     scroll-behavior: smooth;
   }
 }
+/* Add this CSS to your global CSS file or component */
+.typed-text {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.typed-text::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #3182ce; /* Change color if needed */
+  animation: typing 5s infinite linear;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}

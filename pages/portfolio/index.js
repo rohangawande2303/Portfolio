@@ -1,10 +1,12 @@
 import React from "react";
 // import { MdExpandMore } from "react-icons/md";
 import Netflix from "../../public/assets/portfolio/Netflix-clone.jpg";
+import Disney from "../../public/assets/portfolio/Disney-clone.jpg.png";
 import Ecommerce from "../../public/assets/portfolio/E-commerce.jpg";
-import Linkedin from "../../public/assets/portfolio/linkedin-clone.jpg";
+// import Linkedin from "../../public/assets/portfolio/linkedin-clone.jpg";
 import reactWeather from "../../public/assets/portfolio/reactWeather.jpg";
 import arrayDestruct from "../../public/assets/portfolio/arrayDestruct.jpg";
+import foodapp from "../../public/assets/portfolio/food-ordering-app.jpg";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -12,9 +14,9 @@ export const getStaticProps = async () => {
   const portfolios = [
     {
       id: 1,
-      title: "netflix app",
-      imageSrc: Netflix,
-      url: "netflix-app",
+      title: "Disney Clone",
+      imageSrc: Disney,
+      url: "disney-app",
     },
     {
       id: 2,
@@ -24,9 +26,9 @@ export const getStaticProps = async () => {
     },
     {
       id: 3,
-      title: "linkedin clone app",
-      imageSrc: Linkedin,
-      url: "linkedin-clone-app",
+      title: "Food ordering app",
+      imageSrc: foodapp,
+      url: "food-ordering-app",
     },
     {
       id: 4,

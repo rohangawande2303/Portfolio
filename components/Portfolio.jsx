@@ -2,8 +2,10 @@ import React from "react";
 import { MdExpandMore } from "react-icons/md";
 import Netflix from "../public/assets/portfolio/Netflix-clone.jpg";
 import Ecommerce from "../public/assets/portfolio/E-commerce.jpg";
-import Linkedin from "../public/assets/portfolio/linkedin-clone.jpg";
+// import Linkedin from "../public/assets/portfolio/linkedin-clone.jpg";
 import reactWeather from "../public/assets/portfolio/reactWeather.jpg";
+import Disney from "../public/assets/portfolio/Disney-clone.jpg.png";
+import foodapp from "../public/assets/portfolio/food-ordering-app.jpg";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -12,9 +14,9 @@ const Portfolio = () => {
   const portfolios = [
     {
       id: 1,
-      title: "netflix app",
-      imageSrc: Netflix,
-      url: "netflix-app",
+      title: "Disney-clone app",
+      imageSrc: Disney,
+      url: "disney-app",
     },
     {
       id: 2,
@@ -24,9 +26,9 @@ const Portfolio = () => {
     },
     {
       id: 3,
-      title: "linkedin clone app",
-      imageSrc: Linkedin,
-      url: "linkedin-clone-app",
+      title: "Food ordering app",
+      imageSrc: foodapp,
+      url: "food-ordering-app",
     },
     {
       id: 4,
@@ -42,9 +44,8 @@ const Portfolio = () => {
           Portfolio
         </h2>
         <p className="py-4 max-w-lg">
-          The company itself is a very successful company. To whom but his
-          duties, and as if he were running away from pleasures and pleasures,
-          would any man give them just pleasure?
+          This are some of my Projects that I have made using React, Nextjs and
+          other technology
         </p>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
           {portfolios.map(({ id, title, imageSrc, url }) => (

@@ -60,9 +60,8 @@ const Experience = () => {
           Experience
         </h2>
         <p className="py-4 max-w-lg">
-          The company itself is a very successful company. To whom but his
-          duties, and as if he were running away from pleasures and pleasures,
-          would any man give them just pleasure?
+          This are some Technologys that I have used and made projects and have
+          some Understanding of.
         </p>
         <div className="grid lg:grid-cols-4 gap-8">
           {experiences.map(({ id, title, src }) => (

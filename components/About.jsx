@@ -11,35 +11,36 @@ const About = () => {
         </h2>
         <div className="shadow-xl shadow-blue-300 my-8 px-8">
           <p className="py-4 max-w-2xl mx-auto">
-            The company itself is a very successful company. How often do you
-            have the option to get him to do the same and from where does he
-            flee from the forgiveness of the truth? Most of the souls, and they
-            fall to blame, but for those who bear the loose flight! To be
-            assumed born, we lead with pain, the times are less than the times
-            to do it and the resilience is called the flight of greater
-            troubles, some fault.
+            Welcome to my portfolio! I am Rohan Gawande, a passionate and driven
+            web developer eager to make my mark in the digital realm. At 22
+            years old, I bring a fresh perspective and a wealth of hands-on
+            experience to the table.
           </p>
           <p className="py-4 max-w-2xl mx-auto">
-            The company itself is a very successful company. How often do you
-            have the option to get him to do the same and from where does he
-            flee from the forgiveness of the truth? Most of the souls, and they
-            fall to blame, but for those who bear the loose flight! To be
-            assumed born, we lead with pain, the times are less than the times
-            to do it and the resilience is called the flight of greater
-            troubles, some fault.
+            With a strong foundation in HTML, CSS, JavaScript, Python, and
+            React, I have embarked on a journey of continuous learning and
+            growth. My proficiency extends to Next.js, Git, GitHub, Tailwind
+            CSS, and Node.js, empowering me to craft dynamic and responsive web
+            solutions with ease. Through various projects, I have honed my
+            skills in the MERN stack, showcasing my ability to develop robust
+            applications from conception to deployment.
           </p>
+          {/* <p className="py-4 max-w-2xl mx-auto">
+            As a firm believer in collaboration and synergy, I thrive in team
+            environments, leveraging collective expertise to achieve shared
+            goals. My dedication, adaptability, and eagerness to learn make me a
+            valuable asset to any project or team.
+          </p> */}
           <p className="py-4 max-w-2xl mx-auto">
-            The company itself is a very successful company. How often do you
-            have the option to get him to do the same and from where does he
-            flee from the forgiveness of the truth? Most of the souls, and they
-            fall to blame, but for those who bear the loose flight! To be
-            assumed born, we lead with pain, the times are less than the times
-            to do it and the resilience is called the flight of greater
-            troubles, some fault.
+            Explore my portfolio to see firsthand the passion and dedication I
+            bring to my craft. I am excited to embark on new challenges and
+            opportunities, contributing my skills and creativity to make
+            meaningful contributions in the ever-evolving world of web
+            development. Let us build something amazing together!
           </p>
         </div>
         <div className="flex items-center justify-center gap-10">
-          <Link href="resume.pdf" download={true}>
+          {/* <Link href="resume (4).pdf" download={true}>
             <a target="_blank">
               <div className="group flex items-center justify-center my-8 bg-blue-500 text-white px-6 py-3 font-bold uppercase rounded-md tracking-wider cursor-pointer">
                 resume
@@ -48,7 +49,7 @@ const About = () => {
                 </span>
               </div>
             </a>
-          </Link>
+          </Link> */}
 
           <Link href="/#portfolio">
             <div className="group flex items-center justify-center my-8 bg-blue-500 text-white px-6 py-3 font-bold uppercase rounded-md tracking-wider cursor-pointer">
