@@ -8,7 +8,7 @@ const portfolios = [
     title: "Disney-clone app",
     imageSrc: "/assets/portfolio/Disney-clone.jpg.png",
     url: "disney-app",
-    desc: "This is a disney clone made with react ",
+    desc: "The Disney Clone Project is a captivating platform built with React.js, faithfully replicating the magic of Disney's content delivery. It boasts an immersive user interface inspired by Disney's enchanting world. Leveraging React Router for seamless navigation, it provides an engaging experience akin to Disney's official website. With its responsive design and captivating visuals, the project showcases frontend technologies at their finest, delivering a magical browsing experience for Disney enthusiasts worldwide.",
     demo: "https://disney-clone-project.netlify.app/",
   },
   {
@@ -24,7 +24,7 @@ const portfolios = [
     title: "Food ordering app",
     imageSrc: "/assets/portfolio/food-ordering-app.jpg",
     url: "food-ordering-app",
-    desc: "This is a food ordering app built with React.",
+    desc: "Tasty Treat Food Ordering App offers a delightful user experience with its sleek frontend built using React.js. It integrates seamlessly with Stripe for secure payments and provides real-time order tracking. Deployed on Netlify, it showcases modern frontend technologies for efficient and interactive food delivery services..",
     demo: "https://tasty-treat-food-app.netlify.app/",
   },
 ];
