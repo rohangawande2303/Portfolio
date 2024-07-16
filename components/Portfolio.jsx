@@ -5,6 +5,7 @@ import Ecommerce from "../public/assets/portfolio/E-commerce.jpg";
 // import Linkedin from "../public/assets/portfolio/linkedin-clone.jpg";
 import reactWeather from "../public/assets/portfolio/reactWeather.jpg";
 import Disney from "../public/assets/portfolio/Disney-clone.jpg.png";
+import socialpulse from "../public/assets/portfolio/social-pulse-agency.png";
 import foodapp from "../public/assets/portfolio/food-ordering-app.jpg";
 
 import Link from "next/link";
@@ -32,9 +33,9 @@ const Portfolio = () => {
     },
     {
       id: 4,
-      title: "react weather app",
-      imageSrc: reactWeather,
-      url: "react-weather",
+      title: "digital marketing app",
+      imageSrc: socialpulse,
+      url: "social-pulse-agency",
     },
   ];
   return (

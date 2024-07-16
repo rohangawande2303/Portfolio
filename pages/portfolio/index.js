@@ -3,6 +3,7 @@ import React from "react";
 import Netflix from "../../public/assets/portfolio/Netflix-clone.jpg";
 import Disney from "../../public/assets/portfolio/Disney-clone.jpg.png";
 import Ecommerce from "../../public/assets/portfolio/E-commerce.jpg";
+import socialpulse from "../../public/assets/portfolio/social-pulse-agency.png";
 // import Linkedin from "../../public/assets/portfolio/linkedin-clone.jpg";
 import reactWeather from "../../public/assets/portfolio/reactWeather.jpg";
 import arrayDestruct from "../../public/assets/portfolio/arrayDestruct.jpg";
@@ -32,15 +33,15 @@ export const getStaticProps = async () => {
     },
     {
       id: 4,
-      title: "react weather app",
-      imageSrc: reactWeather,
-      url: "react-weather",
+      title: "digital marketing app",
+      imageSrc: socialpulse,
+      url: "social-pulse-agency",
     },
     {
       id: 5,
-      title: "Array Destruct",
-      imageSrc: arrayDestruct,
-      url: "array-Destruct",
+      title: "react weather app",
+      imageSrc: reactWeather,
+      url: "react-weather",
     },
   ];
   return {

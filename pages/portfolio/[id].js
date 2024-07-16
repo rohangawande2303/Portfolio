@@ -27,6 +27,14 @@ const portfolios = [
     desc: "Tasty Treat Food Ordering App offers a delightful user experience with its sleek frontend built using React.js. It integrates seamlessly with Stripe for secure payments and provides real-time order tracking. Deployed on Netlify, it showcases modern frontend technologies for efficient and interactive food delivery services..",
     demo: "https://tasty-treat-food-app.netlify.app/",
   },
+  {
+    id: "Social-pulse-agency",
+    title: "digital marketing app",
+    imageSrc: "/assets/portfolio/social-pulse-agency.png",
+    url: "social-pulse-agency",
+    desc: "This modern Digital Marketing website was built using Next.js, Tailwind CSS, and TypeScript. It features a responsive layout with a sleek, visually appealing design crafted in Figma. The website showcases my skills and experience as a full-stack developer, including projects I've worked on. Additionally, I've integrated Calendly to allow visitors to easily schedule meetings, and a contact form that directly sends email with the submitted information. This digital marketing website serves as an online presence to highlight my expertise in the field.",
+    demo: "https://www.socialpulseagency.in/",
+  },
 ];
 
 const OnePortfolio = ({ portfolio }) => {
