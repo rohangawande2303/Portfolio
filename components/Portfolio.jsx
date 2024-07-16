@@ -14,6 +14,12 @@ import Image from "next/image";
 const Portfolio = () => {
   const portfolios = [
     {
+      id: 4,
+      title: "digital marketing app",
+      imageSrc: socialpulse,
+      url: "social-pulse-agency",
+    },
+    {
       id: 1,
       title: "Disney-clone app",
       imageSrc: Disney,
@@ -30,12 +36,6 @@ const Portfolio = () => {
       title: "Food ordering app",
       imageSrc: foodapp,
       url: "food-ordering-app",
-    },
-    {
-      id: 4,
-      title: "digital marketing app",
-      imageSrc: socialpulse,
-      url: "social-pulse-agency",
     },
   ];
   return (
