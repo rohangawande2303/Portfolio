@@ -35,6 +35,14 @@ const portfolios = [
     desc: "This modern Digital Marketing website was built using Next.js, Tailwind CSS, and TypeScript. It features a responsive layout with a sleek, visually appealing design crafted in Figma. The website showcases my skills and experience as a full-stack developer, including projects I've worked on. Additionally, I've integrated Calendly to allow visitors to easily schedule meetings, and a contact form that directly sends email with the submitted information. This digital marketing website serves as an online presence to highlight my expertise in the field.",
     demo: "https://www.socialpulseagency.in/",
   },
+  {
+    id: "Real-estate",
+    title: "Real Estate app",
+    imageSrc: "/assets/portfolio/aarav-realty.png",
+    url: "real-estate",
+    desc: "The project showcased on my portfolio is a dynamic real estate website developed using Next.js and Tailwind CSS. This platform features an intuitive user interface, responsive design, and seamless navigation, enhancing the user experience for property seekers. Key technologies employed include React for building interactive components, and various APIs for real-time data integration. The site effectively showcases listings with detailed property information, high-quality images, and an integrated search functionality, making it a comprehensive solution for real estate needs.",
+    demo: "https://www.aaravrealty.in/",
+  },
 ];
 
 const OnePortfolio = ({ portfolio }) => {
