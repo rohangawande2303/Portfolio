@@ -6,7 +6,7 @@ import Ecommerce from "../public/assets/portfolio/E-commerce.jpg";
 import reactWeather from "../public/assets/portfolio/reactWeather.jpg";
 import Disney from "../public/assets/portfolio/Disney-clone.jpg.png";
 import socialpulse from "../public/assets/portfolio/social-pulse-agency.png";
-import foodapp from "../public/assets/portfolio/food-ordering-app.jpg";
+import foodapp from "../public/assets/portfolio/food-ordering-app.png";
 import RealEstate from "../public/assets/portfolio/aarav-realty.png";
 
 import Link from "next/link";

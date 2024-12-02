@@ -7,7 +7,7 @@ import socialpulse from "../../public/assets/portfolio/social-pulse-agency.png";
 // import Linkedin from "../../public/assets/portfolio/linkedin-clone.jpg";
 import reactWeather from "../../public/assets/portfolio/reactWeather.jpg";
 import arrayDestruct from "../../public/assets/portfolio/arrayDestruct.jpg";
-import foodapp from "../../public/assets/portfolio/food-ordering-app.jpg";
+import foodapp from "../../public/assets/portfolio/food-ordering-app.png";
 import RealEstate from "../../public/assets/portfolio/aarav-realty.png";
 import Link from "next/link";
 import Image from "next/image";
@@ -44,6 +44,7 @@ export const getStaticProps = async () => {
       imageSrc: RealEstate,
       url: "real-estate",
     },
+
     {
       id: 6,
       title: "react weather app",
