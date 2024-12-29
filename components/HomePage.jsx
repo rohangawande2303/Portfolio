@@ -6,7 +6,10 @@ import { motion } from "framer-motion";
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen bg-white flex justify-center items-center">
+    <div
+      id="home"
+      className="min-h-screen bg-white flex justify-center items-center"
+    >
       <div className="max-w-screen-xl mx-auto px-4 py-12 md:py-24 h-full">
         <motion.div
           className="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8 h-full"

@@ -8,6 +8,9 @@ import tailwind from "../public/assets/experience/tailwind.png";
 import github from "../public/assets/experience/github.png";
 import node from "../public/assets/experience/node.png";
 import Image from "next/image";
+import redux from "../public/assets/experience/redux.webp";
+import typescript from "../public/assets/experience/typescript.webp";
+import uiux from "../public/assets/experience/uiux.png";
 
 const Experience = () => {
   const experiences = [
@@ -50,6 +53,21 @@ const Experience = () => {
       id: 8,
       title: "Node js",
       src: node,
+    },
+    {
+      id: 9,
+      title: "Redux",
+      src: redux,
+    },
+    {
+      id: 10,
+      title: "TypeScript",
+      src: typescript,
+    },
+    {
+      id: 11,
+      title: "UI/UX",
+      src: uiux,
     },
   ];
 
