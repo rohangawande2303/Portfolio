@@ -8,6 +8,7 @@ import Disney from "../public/assets/portfolio/Disney-clone.jpg.png";
 import socialpulse from "../public/assets/portfolio/social-pulse-agency.png";
 import foodapp from "../public/assets/portfolio/food-ordering-app.png";
 import RealEstate from "../public/assets/portfolio/aarav-realty.png";
+import rutu from "../public/assets/portfolio/rutu-group.png";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -19,6 +20,18 @@ const Portfolio = () => {
       title: "digital marketing app",
       imageSrc: socialpulse,
       url: "social-pulse-agency",
+    },
+    {
+      id: 3,
+      title: "Food ordering app",
+      imageSrc: foodapp,
+      url: "food-ordering-app",
+    },
+    {
+      id: 7,
+      title: "rutu group website",
+      imageSrc: rutu,
+      url: "rutu-group",
     },
     {
       id: 5,
@@ -37,12 +50,6 @@ const Portfolio = () => {
       title: "e-commerce app",
       imageSrc: Ecommerce,
       url: "e-commerce-app",
-    },
-    {
-      id: 3,
-      title: "Food ordering app",
-      imageSrc: foodapp,
-      url: "food-ordering-app",
     },
   ];
   return (

@@ -15,13 +15,13 @@ const portfolios = [
     desc: `• Technologies Used:  
   <br/> - React.js (for building a dynamic, component-based user interface, making the app interactive and responsive)  
   <br/> - React Router (for seamless navigation between different sections of the site, simulating the official Disney website experience)  
-  <br/> - CSS (for styling the application with responsive and visually appealing designs that are mobile-friendly)  
+  <br/> - CSS (for styling the application with responsive and visually appealing designs that are mobile-friendly)   
   <br/> - JavaScript (for the core logic of interactivity and rendering dynamic content).
 
   <br/><br/>• Key Features & Functionality:  
-  <br/> - Developed a captivating platform that faithfully replicates the magic of Disney’s content delivery, bringing Disney’s world to life through interactive design and smooth navigation.  
+  <br/> - Developed a captivating platform that faithfully replicates the magic of Disney's content delivery, bringing Disney's world to life through interactive design and smooth navigation.  
   <br/> - Incorporated an immersive user interface, inspired by Disney's enchanting world, creating a magical browsing experience for Disney enthusiasts worldwide.  
-  <br/> - Leveraged React Router to handle seamless page transitions, mimicking the official Disney website’s navigation and enhancing the user experience.  
+  <br/> - Leveraged React Router to handle seamless page transitions, mimicking the official Disney website's navigation and enhancing the user experience.  
   <br/> - Optimized the design for responsiveness, ensuring that the app works flawlessly on a variety of devices, from mobile phones to desktops.`,
 
     demo: "https://disney-clone-project.netlify.app/",
@@ -68,7 +68,7 @@ const portfolios = [
       <br/><br/>• Key Features & Functionality:
       <br/> - Developed a fully functional e-commerce platform with clear product categories, detailed pages, and customer reviews
       <br/> - Integrated Razorpay for a seamless checkout experience with secure, multi-payment options
-      <br/> - Created an admin dashboard for product and order management, powered by Firebase’s real-time database
+      <br/> - Created an admin dashboard for product and order management, powered by Firebase's real-time database
       <br/> - Focused on mobile responsiveness, with Tailwind CSS ensuring a smooth user experience across devices.`,
     demo: "https://aamhi-khandeshi.vercel.app/",
     github: "https://github.com/rohangawande2303/Food-app-Aamhi-Khandeshi-", // Sample GitHub link
@@ -123,6 +123,40 @@ const portfolios = [
     demo: "https://www.aaravrealty.in/",
     github: "https://github.com/rohangawande2303/aarav-realty", // Sample GitHub link
   },
+  {
+    id: "rutu-group",
+    title: "Rutu Group Website",
+    imageSrc: "/assets/portfolio/rutu-group.png",
+    url: "rutu-group",
+    technologies: [
+      " Next.js",
+      "Tailwind CSS",
+      "UI/UX",
+      "SEO",
+      "Google Sheets Integration",
+      "Wireframe & Mockup Design",
+    ], // Added technologies field
+    desc: `• Technologies Used:  
+  <br/> -  Next.js (for server-side rendering and fast loading times, ensuring a smooth, SEO-optimized experience for users and search engines)  
+  <br/> - Tailwind CSS (for building a modern, fully responsive UI with utility-first styling, ensuring consistency and adaptability across all devices)
+  <br/> - UI/UX (focused on intuitive navigation, clear content hierarchy, and visually engaging layouts to enhance user engagement and accessibility) 
+  <br/> - SEO (implemented best practices like optimized metadata, structured content, and fast load times to improve visibility and ranking in search engines)
+  <br/> - Google Sheets Integration (form submissions are automatically saved to Google Sheets, enabling efficient lead management and easy data access)
+  <br/> -  Wireframe & Mockup Design (all design wireframes, mockups, and the final UI/UX were conceptualized and created by me, ensuring a cohesive and user-focused experience).
+
+  <br/><br/>• Key Features & Functionality:  
+  <br/> - Designed and developed a professional corporate website for Rutu Group, a reputed real estate developer with 45+ years of legacy, showcasing their diverse portfolio and values.  
+  <br/> - Created all design wireframes and mockups from scratch, translating ideas into a polished, production-ready interface. 
+  <br/> - Developed dedicated project pages highlighting completed and ongoing developments, with high-quality images, location maps, and detailed amenities to inform potential buyers. 
+  <br/> - Integrated a contact form that automatically saves submissions to Google Sheets, streamlining lead capture and follow-up for the sales team.
+  <br/> -  Included sections for company history, leadership, awards, and testimonials to build trust and communicate the brand's commitment to quality and customer satisfaction.
+  <br/> -  Emphasized Rutu Group's core philosophies such as "Care Better, Build Better," teamwork, professionalism, and customer-first approach through well-structured content and visuals.
+  <br/> -  Ensured seamless navigation and fast page loads using Next.js, while Tailwind CSS guarantees the site remains visually appealing and functional on all screen sizes.
+  <br/> -  Optimized for SEO with clean URLs, semantic HTML, and structured data, ensuring the site ranks well for relevant real estate queries and attracts organic traffic.
+  <br/> -  Included contact forms and inquiry options to facilitate direct communication with potential clients and homebuyers.`,
+    demo: "https://rutu-group.vercel.app/",
+    github: "https://github.com/Rutugroup/Rutu-group", // Sample GitHub link
+  },
 ];
 
 const TechTag = ({ tech }) => (
@@ -161,17 +195,19 @@ const OnePortfolio = ({ portfolio }) => {
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-4xl mx-auto">
+        {/* Added mt-16 to push the back button below the navbar */}
         <motion.button
           onClick={() => router.push("/portfolio")}
-          className="flex items-center text-blue-500 hover:text-blue-600 transition-colors duration-200 mb-8"
+          className="flex items-center text-blue-500 hover:text-blue-600 transition-colors duration-200 mb-8 mt-16"
           whileHover={{ x: -5 }}
         >
           <FaArrowLeft className="mr-2" />
           <span className="font-semibold">Back to Portfolio</span>
         </motion.button>
 
+        {/* Reduced top margin on title since we added it to the back button */}
         <motion.h1
-          className="text-4xl font-bold text-gray-900 mb-6"
+          className="text-4xl font-bold text-gray-900 mb-6 mt-6"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -185,12 +221,13 @@ const OnePortfolio = ({ portfolio }) => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          <div className="relative w-full h-64 sm:h-80 md:h-96 overflow-hidden">
+          {/* Added max-h-96 to limit image height and ensure it stays in its container */}
+          <div className="relative w-full h-64 sm:h-80 md:h-96 max-h-96 overflow-hidden">
             <Image
               src={imageSrc}
               alt={title}
-              layout="fill" // Make the image fill the entire container
-              objectFit="cover" // Ensures the image covers the container fully without white space
+              layout="fill"
+              objectFit="contain" /* Changed from cover to contain to prevent overflow */
               className="transition-transform duration-300 transform hover:scale-105"
             />
           </div>

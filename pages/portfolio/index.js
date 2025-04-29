@@ -9,6 +9,7 @@ import reactWeather from "../../public/assets/portfolio/reactWeather.jpg";
 import arrayDestruct from "../../public/assets/portfolio/arrayDestruct.jpg";
 import foodapp from "../../public/assets/portfolio/food-ordering-app.png";
 import RealEstate from "../../public/assets/portfolio/aarav-realty.png";
+import rutu from "../../public/assets/portfolio/rutu-group.png";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -50,6 +51,12 @@ export const getStaticProps = async () => {
       title: "react weather app",
       imageSrc: reactWeather,
       url: "react-weather",
+    },
+    {
+      id: 7,
+      title: "rutu group website",
+      imageSrc: rutu,
+      url: "rutu-group",
     },
   ];
   return {
