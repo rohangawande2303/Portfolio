@@ -11,7 +11,7 @@ const portfolios = [
     title: "Disney-clone app",
     imageSrc: "/assets/portfolio/Disney-clone.jpg.png",
     url: "disney-app",
-    technologies: ["React.js", "React Router", "CSS", "JavaScript"], // Added technologies field
+    technologies: ["React.js", "React Router", "CSS", "JavaScript"],
     desc: `• Technologies Used:  
   <br/> - React.js (for building a dynamic, component-based user interface, making the app interactive and responsive)  
   <br/> - React Router (for seamless navigation between different sections of the site, simulating the official Disney website experience)  
@@ -25,14 +25,14 @@ const portfolios = [
   <br/> - Optimized the design for responsiveness, ensuring that the app works flawlessly on a variety of devices, from mobile phones to desktops.`,
 
     demo: "https://disney-clone-project.netlify.app/",
-    github: "https://github.com/rohangawande2303/Disney-clone", // Sample GitHub link
+    github: "https://github.com/rohangawande2303/Disney-clone",
   },
   {
     id: "e-commerce-app",
     title: "E-commerce app",
     imageSrc: "/assets/portfolio/E-commerce.jpg",
     url: "e-commerce-app",
-    technologies: ["React", "Styled Components", "Stripe", "Auth0"], // Added technologies field
+    technologies: ["React", "Styled Components", "Stripe", "Auth0"],
     desc: `• Technologies Used:  
   <br/> - React (for building the user interface with reusable components and state management)  
   <br/> - Styled Components (for scoped, dynamic styling and maintaining a consistent design throughout the app)  
@@ -45,7 +45,7 @@ const portfolios = [
   <br/> - Integrated Stripe payment gateway, allowing users to make payments securely with various methods (credit cards, debit cards, etc.).  
   <br/> - Focused on ensuring mobile responsiveness and a modern, user-friendly design using Styled Components.`,
     demo: "https://react-course-comfy-sloth-store.netlify.app/",
-    github: "https://github.com/your-username/e-commerce-app", // Sample GitHub link
+    github: "https://github.com/your-username/e-commerce-app",
   },
   {
     id: "food-app",
@@ -58,7 +58,7 @@ const portfolios = [
       " Firebase",
       " Clerk",
       " Razorpay",
-    ], // Added technologies field
+    ],
     desc: `• Technologies Used:
       <br/> - Next.js (for server-side rendering and fast loading times, ensuring a smooth, SEO-friendly user experience)
       <br/> - Tailwind CSS (for responsive and modern UI design, ensuring a mobile-first, consistent look across all devices)
@@ -71,7 +71,7 @@ const portfolios = [
       <br/> - Created an admin dashboard for product and order management, powered by Firebase's real-time database
       <br/> - Focused on mobile responsiveness, with Tailwind CSS ensuring a smooth user experience across devices.`,
     demo: "https://aamhi-khandeshi.vercel.app/",
-    github: "https://github.com/rohangawande2303/Food-app-Aamhi-Khandeshi-", // Sample GitHub link
+    github: "https://github.com/rohangawande2303/Food-app-Aamhi-Khandeshi-",
   },
   {
     id: "social-pulse-agency",
@@ -85,7 +85,7 @@ const portfolios = [
       "UI/UX",
       "Framer Motion",
       "Calendly",
-    ], // Added technologies field
+    ],
     desc: `• Technologies Used:  
   <br/> - Next.js (for server-side rendering and fast loading times, ensuring a smooth, SEO-friendly user experience)  
   <br/> - TypeScript (for providing type safety and better code maintainability)  
@@ -100,14 +100,14 @@ const portfolios = [
   <br/> - Implemented SEO best practices, ensuring that the web app ranks well on search engines. Integrated Google Analytics and Google Search Console for tracking performance and insights.  
   <br/> - Focused on scalability and responsive design, ensuring that the app performs seamlessly across various devices and screen sizes.`,
     demo: "https://www.socialpulseagency.in/",
-    github: "https://github.com/rohangawande2303/social-pulse-agency", // Sample GitHub link
+    github: "https://github.com/rohangawande2303/social-pulse-agency",
   },
   {
     id: "real-estate",
     title: "Real Estate App",
     imageSrc: "/assets/portfolio/aarav-realty.png",
     url: "real-estate",
-    technologies: [" Next.js", "Tailwind CSS", "UI/UX", "SEO"], // Added technologies field
+    technologies: [" Next.js", "Tailwind CSS", "UI/UX", "SEO"],
     desc: `• Technologies Used:  
   <br/> - Next.js (for server-side rendering and fast loading times, ensuring a smooth, SEO-friendly user experience)  
   <br/> - JSX (for writing the application in declarative code, enabling clean and maintainable components)  
@@ -121,7 +121,7 @@ const portfolios = [
   <br/> - Enabled a smooth user experience with responsive design and intuitive navigation, optimized for mobile and desktop.  
   <br/> - Focused on enhancing user journey through clear calls to action, property search filters, and easy-to-navigate pages.`,
     demo: "https://www.aaravrealty.in/",
-    github: "https://github.com/rohangawande2303/aarav-realty", // Sample GitHub link
+    github: "https://github.com/rohangawande2303/aarav-realty",
   },
   {
     id: "rutu-group",
@@ -135,7 +135,7 @@ const portfolios = [
       "SEO",
       "Google Sheets Integration",
       "Wireframe & Mockup Design",
-    ], // Added technologies field
+    ],
     desc: `• Technologies Used:  
   <br/> -  Next.js (for server-side rendering and fast loading times, ensuring a smooth, SEO-optimized experience for users and search engines)  
   <br/> - Tailwind CSS (for building a modern, fully responsive UI with utility-first styling, ensuring consistency and adaptability across all devices)
@@ -155,14 +155,15 @@ const portfolios = [
   <br/> -  Optimized for SEO with clean URLs, semantic HTML, and structured data, ensuring the site ranks well for relevant real estate queries and attracts organic traffic.
   <br/> -  Included contact forms and inquiry options to facilitate direct communication with potential clients and homebuyers.`,
     demo: "https://rutu-group.vercel.app/",
-    github: "https://github.com/Rutugroup/Rutu-group", // Sample GitHub link
+    github: "https://github.com/Rutugroup/Rutu-group",
   },
 ];
 
 const TechTag = ({ tech }) => (
   <motion.span
-    className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mr-2 mb-2"
-    whileHover={{ scale: 1.05 }}
+    className={`inline-block px-3 py-1.5 rounded-full text-sm font-medium mr-3 mb-3 border transition-all duration-300 
+      bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100`}
+    whileHover={{ scale: 1.05, y: -2 }}
     whileTap={{ scale: 0.95 }}
   >
     {tech}
@@ -189,110 +190,142 @@ const OnePortfolio = ({ portfolio }) => {
 
   return (
     <motion.div
-      className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-black dark:via-gray-900 dark:to-gray-950 transition-all duration-500"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.6 }}
     >
-      <div className="max-w-4xl mx-auto">
-        {/* Added mt-16 to push the back button below the navbar */}
-        <motion.button
-          onClick={() => router.push("/portfolio")}
-          className="flex items-center text-blue-500 hover:text-blue-600 transition-colors duration-200 mb-8 mt-16"
-          whileHover={{ x: -5 }}
-        >
-          <FaArrowLeft className="mr-2" />
-          <span className="font-semibold">Back to Portfolio</span>
-        </motion.button>
+      {/* Header Section */}
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-white/20 dark:bg-black/30 backdrop-blur-sm"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-8">
+          {/* Navigation */}
+          <div className="flex justify-between items-center mb-8">
+            <motion.button
+              onClick={() => router.push("/portfolio")}
+              className="group flex items-center space-x-2 px-4 py-2 rounded-lg text-gray-600 hover:text-gray-900 bg-white/50 hover:bg-white/80 dark:bg-gray-800/60 dark:hover:bg-gray-700/60 dark:text-gray-300 dark:hover:text-white backdrop-blur-sm border border-gray-200/50 dark:border-gray-700 transition-all duration-300"
+              whileHover={{ x: -5 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FaArrowLeft className="transition-transform duration-300 group-hover:-translate-x-1" />
+              <span className="font-medium">Back to Portfolio</span>
+            </motion.button>
+          </div>
 
-        {/* Reduced top margin on title since we added it to the back button */}
-        <motion.h1
-          className="text-4xl font-bold text-gray-900 mb-6 mt-6"
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          {title}
-        </motion.h1>
+          {/* Hero Title */}
+          <motion.div
+            className="text-center mb-12"
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          >
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-gray-900 dark:text-white">
+              {title}
+            </h1>
+            <div className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-blue-600"></div>
+          </motion.div>
+        </div>
+      </div>
 
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        {/* Project Image */}
         <motion.div
-          className="bg-white shadow-lg rounded-lg overflow-hidden mb-8"
-          initial={{ y: 20, opacity: 0 }}
+          className="mb-16"
+          initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
         >
-          {/* Added max-h-96 to limit image height and ensure it stays in its container */}
-          <div className="relative w-full h-64 sm:h-80 md:h-96 max-h-96 overflow-hidden">
-            <Image
-              src={imageSrc}
-              alt={title}
-              layout="fill"
-              objectFit="contain" /* Changed from cover to contain to prevent overflow */
-              className="transition-transform duration-300 transform hover:scale-105"
-            />
+          <div className="relative mx-auto max-w-2xl rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-gray-900 backdrop-blur-sm border border-gray-200/30 dark:border-gray-700">
+            <div className="relative group rounded-xl overflow-hidden">
+              <Image
+                src={imageSrc}
+                alt={title}
+                width={800}
+                height={450}
+                className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
           </div>
         </motion.div>
 
-        <motion.div
-          className="bg-white shadow-lg rounded-lg p-6 mb-8"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4 }}
-        >
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Technologies Used
-          </h2>
-          <div>
-            {technologies.length > 0 ? (
-              technologies.map((tech, index) => (
-                <TechTag key={index} tech={tech} />
-              ))
-            ) : (
-              <p>No technologies specified for this project.</p>
-            )}
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="bg-white shadow-lg rounded-lg p-6 mb-8"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Description
-          </h2>
-          <div
-            className="text-gray-700 leading-relaxed space-y-4"
-            dangerouslySetInnerHTML={{ __html: desc }}
-          />
-        </motion.div>
-
-        <motion.div
-          className="flex flex-col sm:flex-row justify-center gap-4"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.6 }}
-        >
-          <motion.button
-            onClick={redirectToDemo}
-            className="flex items-center justify-center bg-blue-500 text-white px-6 py-3 rounded-md font-semibold tracking-wide hover:bg-blue-600 transition-colors duration-200"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Technologies Section */}
+          <motion.div
+            className="lg:col-span-1"
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <FaExternalLinkAlt className="mr-2" />
-            View Demo
-          </motion.button>
-          <motion.button
-            onClick={redirectToGitHub}
-            className="flex items-center justify-center bg-gray-800 text-white px-6 py-3 rounded-md font-semibold tracking-wide hover:bg-gray-900 transition-colors duration-200"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            <div className="sticky top-8 rounded-2xl p-8 bg-gradient-to-br from-white to-gray-50/80 dark:from-gray-900 dark:to-gray-800 border border-gray-200/30 dark:border-gray-700 backdrop-blur-sm shadow-xl">
+              <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                Tech Stack
+              </h2>
+              <div className="space-y-3">
+                {technologies.length > 0 ? (
+                  technologies.map((tech, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.5 + index * 0.1 }}
+                    >
+                      <TechTag tech={tech} />
+                    </motion.div>
+                  ))
+                ) : (
+                  <p className="text-gray-600 dark:text-gray-300">
+                    No technologies specified for this project.
+                  </p>
+                )}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="mt-8 space-y-4">
+                <motion.button
+                  onClick={redirectToDemo}
+                  className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-4 rounded-xl font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <FaExternalLinkAlt />
+                  <span>View Live Demo</span>
+                </motion.button>
+
+                <motion.button
+                  onClick={redirectToGitHub}
+                  className="w-full flex items-center justify-center space-x-2 px-6 py-4 rounded-xl font-semibold border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <FaGithub />
+                  <span>View Source Code</span>
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Description Section */}
+          <motion.div
+            className="lg:col-span-2"
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
           >
-            <FaGithub className="mr-2" />
-            View on GitHub
-          </motion.button>
-        </motion.div>
+            <div className="rounded-2xl p-8 bg-gradient-to-br from-white to-gray-50/80 dark:from-gray-900 dark:to-gray-800 border border-gray-200/30 dark:border-gray-700 backdrop-blur-sm shadow-xl">
+              <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
+                Project Overview
+              </h2>
+              <div className="prose prose-lg max-w-none prose-gray prose-headings:text-gray-900 prose-p:text-gray-700 dark:prose-invert">
+                <div
+                  className="leading-relaxed space-y-6 dark:text-white"
+                  dangerouslySetInnerHTML={{ __html: desc }}
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </motion.div>
   );
