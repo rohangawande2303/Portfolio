@@ -157,6 +157,60 @@ const portfolios = [
     demo: "https://rutu-group.vercel.app/",
     github: "https://github.com/Rutugroup/Rutu-group",
   },
+  {
+    id: "real-estate",
+    title: "Real Estate Landing Page",
+    imageSrc: "/assets/portfolio/trade-centre.png",
+    url: "trade-centre",
+    technologies: [
+      " Next.js",
+      "Tailwind CSS",
+      "UI/UX",
+      "SEO",
+      "Google Sheets Integration",
+    ],
+    desc: `• Technologies Used:  
+  <br/> - Next.js (for server-side rendering and fast loading times, ensuring a smooth, SEO-friendly user experience)  
+  <br/> - TSX (for writing the application in declarative code, enabling clean and maintainable components)  
+  <br/> - Tailwind CSS (for responsive and modern UI design, ensuring a mobile-first, consistent look across all devices)  
+  <br/> - UI/UX (focused on user-centric design to ensure an intuitive interface and optimal user experience).
+
+  <br/><br/>• Key Features & Functionality:  
+  <br/> - Designed and developed a comprehensive real estate platform with property listings and detailed property pages.  
+  <br/> - Integrated image galleries for each listing, showcasing high-quality property images for better user engagement.  
+  <br/> - Implemented lead generation features, including automated email notifications for inquiries and new property listings.  
+  <br/> - Enabled a smooth user experience with responsive design and intuitive navigation, optimized for mobile and desktop.  
+  <br/> - Focused on enhancing user journey through clear calls to action, property search filters, and easy-to-navigate pages.`,
+    demo: "https://www.hubtowntradecentre.com/",
+    github: "https://github.com/hubtown-tradecentre/Trade-centre",
+  },
+  {
+    id: "Beqube",
+    title: "Real Estate Consultancy Website",
+    imageSrc: "/assets/portfolio/beqube.png",
+    url: "beqube",
+    technologies: [
+      " Next.js",
+      "Tailwind CSS",
+      "UI/UX",
+      "Framer Motion",
+      "SEO",
+      "Google Sheets Integration",
+    ],
+    desc: `• Technologies Used:  
+  <br/> - Next.js: Server-side rendering & fast load times for a smooth, SEO-friendly experience 
+  <br/> - TypeScript (TSX): Declarative and maintainable code structure  
+  <br/> - Tailwind CSS: Responsive, mobile-first, and consistent UI design  
+  <br/> - UI/UX: User-centric interface with optimal navigation.
+
+  <br/><br/>• Key Features & Functionality:  
+  <br/> - Designed and developed a comprehensive real estate consultancy website that has the information about there clients and they experience.    
+  <br/> - Implemented lead generation features, including automated Google sheet integration for inquiries.  
+  <br/> - Enabled a smooth user experience with responsive design and intuitive navigation, optimized for mobile and desktop.  
+  <br/> - Focused on enhancing user journey through clear calls to action.`,
+    demo: "https://beqube-website.vercel.app/",
+    github: "https://github.com/beqube/beqube_website",
+  },
 ];
 
 const TechTag = ({ tech }) => (

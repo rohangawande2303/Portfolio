@@ -11,6 +11,8 @@ import socialpulse from "../public/assets/portfolio/social-pulse-agency.png";
 import foodapp from "../public/assets/portfolio/food-ordering-app.png";
 import RealEstate from "../public/assets/portfolio/aarav-realty.png";
 import rutu from "../public/assets/portfolio/rutu-group.png";
+import RealEstate2 from "../public/assets/portfolio/trade-centre.png";
+import Beqube from "../public/assets/portfolio/beqube.png";
 
 const Portfolio = () => {
   const portfolios = [
@@ -36,6 +38,27 @@ const Portfolio = () => {
       url: "rutu-group",
     },
     {
+      id: 9,
+      title: "Real Estate Consultancy",
+      category: "Web Design and Development",
+      imageSrc: Beqube,
+      url: "beqube",
+    },
+    {
+      id: 2,
+      title: "E-commerce App",
+      category: "Web app",
+      imageSrc: Ecommerce,
+      url: "e-commerce-app",
+    },
+    {
+      id: 8,
+      title: "Real Estate Landing Page",
+      category: "Landing Page",
+      imageSrc: RealEstate2,
+      url: "trade-centre",
+    },
+    {
       id: 5,
       title: "Real Estate App",
       category: "Web design",
@@ -48,13 +71,6 @@ const Portfolio = () => {
       category: "web design",
       imageSrc: Disney,
       url: "disney-app",
-    },
-    {
-      id: 2,
-      title: "E-commerce App",
-      category: "Web app",
-      imageSrc: Ecommerce,
-      url: "e-commerce-app",
     },
   ];
 
@@ -76,10 +92,10 @@ const Portfolio = () => {
           projects showcasing my expertise in Full Stack development.
         </p>
 
-        {/* Portfolio Grid */} 
+        {/* Portfolio Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {portfolios
-            .slice(0, 6) 
+            .slice(0, 9)
             .map(({ id, title, category, imageSrc, url }) => (
               <Link key={id} href={`/portfolio/${url}`}>
                 <div

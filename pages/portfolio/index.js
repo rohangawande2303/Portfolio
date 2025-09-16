@@ -10,6 +10,8 @@ import arrayDestruct from "../../public/assets/portfolio/arrayDestruct.jpg";
 import foodapp from "../../public/assets/portfolio/food-ordering-app.png";
 import RealEstate from "../../public/assets/portfolio/aarav-realty.png";
 import rutu from "../../public/assets/portfolio/rutu-group.png";
+import realestate2 from "../../public/assets/portfolio/trade-centre.png";
+import Beqube from "../../public/assets/portfolio/beqube.png";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -57,6 +59,18 @@ export const getStaticProps = async () => {
       title: "rutu group website",
       imageSrc: rutu,
       url: "rutu-group",
+    },
+    {
+      id: 8,
+      title: "Real Estate Landing Page",
+      imageSrc: realestate2,
+      url: "trade-centre",
+    },
+    {
+      id: 9,
+      title: "Real Estate Consultancy",
+      imageSrc: Beqube,
+      url: "beqube",
     },
   ];
   return {
