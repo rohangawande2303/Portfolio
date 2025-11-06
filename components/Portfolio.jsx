@@ -13,6 +13,7 @@ import RealEstate from "../public/assets/portfolio/aarav-realty.png";
 import rutu from "../public/assets/portfolio/rutu-group.png";
 import RealEstate2 from "../public/assets/portfolio/trade-centre.png";
 import Beqube from "../public/assets/portfolio/beqube.png";
+import KD from "../public/assets/portfolio/kd-rmc-llp.png";
 
 const Portfolio = () => {
   const portfolios = [
@@ -58,6 +59,14 @@ const Portfolio = () => {
       imageSrc: RealEstate2,
       url: "trade-centre",
     },
+    {
+      id: 10,
+      title: "KD RMC LLP Concreate company",
+      category: "Web Design and Development",
+      imageSrc: KD,
+      url: "kd-rmc-llp",
+    },
+
     {
       id: 5,
       title: "Real Estate App",

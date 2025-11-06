@@ -372,7 +372,7 @@ const About = () => {
           <div className="flex-shrink-0">
             <div className="relative w-80 h-96 rounded-3xl overflow-hidden shadow-2xl bg-gray-200 dark:bg-gray-700">
               <Image
-                src="/assets/heroImage.png"
+                src="/assets/rohan-portfolio-2.png"
                 alt="Profile"
                 width={320}
                 height={384}

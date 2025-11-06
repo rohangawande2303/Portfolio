@@ -12,6 +12,7 @@ import RealEstate from "../../public/assets/portfolio/aarav-realty.png";
 import rutu from "../../public/assets/portfolio/rutu-group.png";
 import realestate2 from "../../public/assets/portfolio/trade-centre.png";
 import Beqube from "../../public/assets/portfolio/beqube.png";
+import KD from "../../public/assets/portfolio/kd-rmc-llp.png";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -71,6 +72,12 @@ export const getStaticProps = async () => {
       title: "Real Estate Consultancy",
       imageSrc: Beqube,
       url: "beqube",
+    },
+    {
+      id: 10,
+      title: "KD RMC LLP Concreate company",
+      imageSrc: KD,
+      url: "kd-rmc-llp",
     },
   ];
   return {

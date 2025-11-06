@@ -211,6 +211,36 @@ const portfolios = [
     demo: "https://beqube-website.vercel.app/",
     github: "https://github.com/beqube/beqube_website",
   },
+  {
+    id: "kd-rmc-llp",
+    title: "KD RMC LLP",
+    imageSrc: "/assets/portfolio/kd-rmc-llp.png",
+    url: "kd-rmc-llp",
+    technologies: [
+      "Next.js",
+      "Framer Motion",
+      "Custom CSS",
+      "UI/UX",
+      "SEO",
+      "Deployment",
+      "Domain Management",
+    ],
+    desc: `• Technologies Used:  
+    <br/> - Next.js (for modern, high-performance web development with optimized SEO and server-side rendering)  
+    <br/> - Framer Motion (for smooth, visually engaging animations and interactive transitions)  
+    <br/> - Custom CSS (for handcrafted, clean design aesthetics and fluid responsiveness)  
+    <br/> - UI/UX (focused on providing a clear and intuitive interface that reflects the company’s industrial identity)
+    
+    <br/><br/>• Key Features & Functionality:  
+    <br/> - Designed and developed a professional website for a Ready Mix Concrete company from concept to deployment.  
+    <br/> - Built a fully responsive layout tailored to industrial branding and business needs.  
+    <br/> - Implemented subtle animations using Framer Motion to enhance the browsing experience.  
+    <br/> - Performed complete SEO optimization, including keyword targeting, metadata setup, and Google ranking improvements.  
+    <br/> - Managed hosting, deployment, and domain linking to ensure smooth project delivery.  
+    <br/> - Delivered an end-to-end solution — covering UI/UX design, website development, SEO, and technical infrastructure.`,
+    demo: "https://www.kdrmcllp.in/",
+    github: "https://github.com/kdrmcllp/KD-RMC-LLP-website",
+  },
 ];
 
 const TechTag = ({ tech }) => (
