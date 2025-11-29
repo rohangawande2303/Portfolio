@@ -48,7 +48,7 @@ const About = ({ openContact }) => {
               className="space-y-4"
             >
               <h2 className="text-4xl md:text-6xl font-medium leading-tight">
-                Hi, I'm Rohan. <br />
+                Hi, I&apos;m Rohan. <br />
                 <span className="text-gray-500">Full Stack Developer from Mumbai.</span>
               </h2>
             </motion.div>
@@ -61,7 +61,7 @@ const About = ({ openContact }) => {
               transition={{ delay: 0.2 }}
             >
               <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
-                I’m Rohan, a 24-year-old self-taught programmer and designer from Mumbai specializing in full stack web development, web apps, and UI/UX design. With hands-on experience across projects for startups and established companies, I’ve managed everything from client requirements and analysis through design, coding, testing, and deployment. Every live project in my portfolio is built end-to-end by me, ensuring top quality and a smooth process from start to finish.
+                I&apos;m Rohan, a 24-year-old self-taught programmer and designer from Mumbai specializing in full stack web development, web apps, and UI/UX design. With hands-on experience across projects for startups and established companies, I&apos;ve managed everything from client requirements and analysis through design, coding, testing, and deployment. Every live project in my portfolio is built end-to-end by me, ensuring top quality and a smooth process from start to finish.
               </p>
             </motion.div>
 

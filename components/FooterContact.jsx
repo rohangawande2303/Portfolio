@@ -12,7 +12,7 @@ const FooterContact = ({ openContact }) => {
                     {/* Headline */}
                     <div className="space-y-8">
                         <h2 className="text-4xl md:text-6xl font-medium leading-tight">
-                            Let's talk about your project and make something really great out of it!
+                            Let&apos;s talk about your project and make something really great out of it!
                         </h2>
                     </div>
 

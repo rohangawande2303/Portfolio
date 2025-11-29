@@ -96,7 +96,7 @@ const ContactSlideover = ({ isOpen, onClose }) => {
                         <div className="p-8 md:p-12 h-full flex flex-col">
                             {/* Header */}
                             <div className="flex justify-between items-center mb-12">
-                                <h2 className="text-3xl font-bold">Let's talk.</h2>
+                                <h2 className="text-3xl font-bold">Let&apos;s talk.</h2>
                                 <button
                                     onClick={onClose}
                                     className="p-2 rounded-full hover:bg-gray-100 text-gray-500 hover:text-black transition-colors"
@@ -170,7 +170,7 @@ const ContactSlideover = ({ isOpen, onClose }) => {
                                 {submitStatus === "success" && (
                                     <div className="p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3 text-green-700">
                                         <CheckCircle size={20} />
-                                        <span>Message sent successfully! I'll get back to you soon.</span>
+                                        <span>Message sent successfully! I&apos;ll get back to you soon.</span>
                                     </div>
                                 )}
 

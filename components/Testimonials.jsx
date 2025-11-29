@@ -71,7 +71,7 @@ const Testimonials = () => {
                                 className="space-y-8"
                             >
                                 <p className="text-2xl md:text-3xl font-light leading-relaxed text-gray-800">
-                                    "{testimonials[currentIndex].text}"
+                                    &ldquo;{testimonials[currentIndex].text}&ldquo;
                                 </p>
 
                                 <div className="flex items-center gap-4">

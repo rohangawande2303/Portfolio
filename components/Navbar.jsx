@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Navbar({ openContact, theme = "dark" }) {
   const router = useRouter();
@@ -59,13 +60,13 @@ export default function Navbar({ openContact, theme = "dark" }) {
       >
         <div className="container mx-auto flex justify-between items-center px-6 md:px-12">
           {/* Logo */}
-          <a
+          <Link
             href="/"
             onClick={handleLogoClick}
             className={`text-xl md:text-2xl font-medium tracking-tight transition-colors ${textColorClass}`}
           >
             Rohan
-          </a>
+          </Link>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-8 lg:space-x-12">

@@ -76,7 +76,7 @@ const HomePage = ({ openContact }) => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-[18px] md:text-xl text-gray-400 font-light max-w-md"
           >
-            I'll help you make a lasting impression online.
+            I&apos;ll help you make a lasting impression online.
           </motion.p>
 
           <motion.button
