@@ -60,12 +60,10 @@ export default function Navbar({ openContact, theme = "dark" }) {
       >
         <div className="container mx-auto flex justify-between items-center px-6 md:px-12">
           {/* Logo */}
-          <Link
-            href="/"
-            onClick={handleLogoClick}
-            className={`text-xl md:text-2xl font-medium tracking-tight transition-colors ${textColorClass}`}
-          >
-            Rohan
+          <Link href="/" onClick={handleLogoClick}>
+            <FlipLink className="text-white !uppercase !text-xl md:!text-2xl !font-medium">
+              Rohan
+            </FlipLink>
           </Link>
 
           {/* Desktop Links */}
