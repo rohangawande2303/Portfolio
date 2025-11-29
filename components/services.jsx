@@ -1,83 +1,121 @@
-// components/services.jsx
+import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const services = [
   {
-    title: "Web design",
-    description:
-      "Designing and developing responsive, user-friendly websites tailored to your brand.",
-    icon: "🌐",
-    href: "/web-design",
+    id: 1,
+    title: "Design",
+    services: [
+      "UI/UX Design",
+      "Digital Ads Creatives",
+      "Posters",
+      "Billboard Hoardings"
+    ],
+    description: "Crafting impactful visuals and user-focused designs that bring your brand to life. From intuitive UI/UX to compelling digital creatives, posters, and billboard hoardings — every design tells your brand’s story with clarity and style.",
+    link: "/services/web-design"
   },
   {
-    title: "Mobile app",
-    description:
-      "Building sleek, high-performance mobile applications for iOS and Android platforms.",
-    icon: "📱",
-    href: "/mobile-app",
+    id: 2,
+    title: "AI Products",
+    services: [
+      "AI Chatbots",
+      "Voice AI Agents",
+      "WhatsApp Chatbots",
+      "Custom AI Agents"
+    ],
+    description: "Developing intelligent AI solutions that enhance engagement and automate workflows. From custom chatbots and voice agents to smart WhatsApp assistants — each product makes digital experiences faster and smarter.",
+    link: "/services/ai"
   },
   {
-    title: "Web app",
-    description:
-      "Creating dynamic, scalable web applications using modern frameworks and best practices.",
-    icon: "🎨",
-    href: "/web-app",
+    id: 3,
+    title: "Web Apps",
+    services: [
+      "E-commerce Stores",
+      "Landing Pages",
+      "Multi-page Websites"
+    ],
+    description: "Building high-quality web applications that perform seamlessly across all devices. Whether it’s an e-commerce store, business landing page, or multi-page website — each project delivers performance, scalability, and exceptional user experience.",
+    link: "/services/web-app"
   },
   {
-    title: "Graphics design",
-    description:
-      "Crafting visually compelling designs, logos, and digital assets for your brand identity.",
-    icon: "🖼️",
-    href: "/graphics-design",
-  },
+    id: 4,
+    title: "Software Products",
+    services: [
+      "Real Estate CRM",
+      "Appointment Booking",
+      "Custom Mobile Apps"
+    ],
+    description: "Creating reliable, scalable software for modern businesses. From CRM systems for real estate teams to appointment booking tools and mobile apps — these solutions simplify operations and drive growth.",
+    link: "/services/software"
+  }
 ];
 
-export default function Services() {
+const Services = () => {
   return (
-    <section
-      id="services"
-      className="py-20 bg-white dark:bg-black transition-colors duration-300"
-    >
-      <div className="max-w-6xl mx-auto text-center px-6">
-        {/* Section Heading */}
-        <h4 className="text-gray-700 dark:text-gray-400">What I offer</h4>
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mt-2">
-          My Services
-        </h2>
+    <div id="services" className="w-full text-white py-24 px-6 md:px-12" style={{ backgroundColor: "#1a1a1a" }}>
+      <div className="max-w-7xl mx-auto">
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-          {services.map((service, index) => (
-            <Link key={index} href={service.href}>
-              <div
-                className="p-6 lg:p-8 border border-gray-200 dark:border-gray-700 
-                rounded-xl shadow-md shadow-blue-200 dark:shadow-blue-900/50 
-                hover:shadow-xl hover:bg-gray-50 dark:hover:bg-neutral-900 
-                cursor-pointer transition duration-300 group"
-              >
-                {/* Icon */}
-                <div className="text-4xl mb-4">{service.icon}</div>
-
-                {/* Title */}
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
-                  {service.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-base md:text-lg text-gray-500 dark:text-gray-300 mt-2 lg:line-clamp-2">
-                  {service.description}
-                </p>
-
-                {/* Read more */}
-                <div className="mt-4 text-blue-600 dark:text-blue-400 flex items-center space-x-1">
-                  <span>Read more</span>
-                  <span>→</span>
-                </div>
-              </div>
-            </Link>
-          ))}
+        {/* Header */}
+        <div className="flex items-center gap-2 mb-16">
+          <div className="w-2 h-2 bg-white rounded-full" />
+          <span className="text-sm font-bold tracking-widest uppercase text-gray-400">Services</span>
         </div>
+
+        {/* List Layout */}
+        <div className="flex flex-col">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="group border-t border-gray-800 py-12 hover:bg-white/5 transition-colors duration-500"
+            >
+              <Link href={service.link}>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 cursor-pointer">
+
+                  {/* Number */}
+                  <div className="md:col-span-1">
+                    <span className="text-3xl md:text-4xl font-light text-gray-600 group-hover:text-white transition-colors">
+                      0{index + 1}
+                    </span>
+                  </div>
+
+                  {/* Title & Sub-services */}
+                  <div className="md:col-span-5 space-y-6">
+                    <h3 className="text-3xl md:text-5xl font-medium group-hover:translate-x-4 transition-transform duration-500">
+                      {service.title}
+                    </h3>
+                    {/* Sub-services List */}
+                    <div className="flex flex-wrap gap-2 group-hover:translate-x-4 transition-transform duration-500 delay-75">
+                      {service.services.map((sub, i) => (
+                        <span key={i} className="text-sm text-gray-400 border border-gray-700 px-3 py-1 rounded-full">
+                          {sub}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <div className="md:col-span-6 flex items-center">
+                    <p className="text-gray-400 text-lg group-hover:text-gray-300 transition-colors leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+          {/* Bottom Border */}
+          <div className="border-t border-gray-800" />
+        </div>
+
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default Services;

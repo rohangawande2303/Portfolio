@@ -1,443 +1,82 @@
-import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
-// Tools Array
-const tools = [
-  {
-    name: "VS Code",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        x="0px"
-        y="0px"
-        width="50"
-        height="50"
-        viewBox="0 0 48 48"
-      >
-        <path
-          fill="#29b6f6"
-          d="M44,11.11v25.78c0,1.27-0.79,2.4-1.98,2.82l-8.82,4.14L34,33V15L33.2,4.15l8.82,4.14 C43.21,8.71,44,9.84,44,11.11z"
-        ></path>
-        <path
-          fill="#0277bd"
-          d="M9,33.896L34,15V5.353c0-1.198-1.482-1.758-2.275-0.86L4.658,29.239 c-0.9,0.83-0.849,2.267,0.107,3.032c0,0,1.324,1.232,1.803,1.574C7.304,34.37,8.271,34.43,9,33.896z"
-        ></path>
-        <path
-          fill="#0288d1"
-          d="M9,14.104L34,33v9.647c0,1.198-1.482,1.758-2.275,0.86L4.658,18.761 c-0.9-0.83-0.849-2.267,0.107-3.032c0,0,1.324-1.232,1.803-1.574C7.304,13.63,8.271,13.57,9,14.104z"
-        ></path>
-      </svg>
-    ),
-  },
-
-  {
-    name: "Figma",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        x="0px"
-        y="0px"
-        width="50"
-        height="50"
-        viewBox="0 0 48 48"
-      >
-        <path
-          fill="#e64a19"
-          d="M26,17h-8c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h8V17z"
-        ></path>
-        <path
-          fill="#7c4dff"
-          d="M25,31h-7c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h7V31z"
-        ></path>
-        <path
-          fill="#66bb6a"
-          d="M18,45L18,45c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h7v7C25,41.866,21.866,45,18,45z"
-        ></path>
-        <path
-          fill="#ff7043"
-          d="M32,17h-7V3h7c3.866,0,7,3.134,7,7v0C39,13.866,35.866,17,32,17z"
-        ></path>
-        <circle cx="32" cy="24" r="7" fill="#29b6f6"></circle>
-      </svg>
-    ),
-  },
-  {
-    name: "Git",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        x="0px"
-        y="0px"
-        width="50"
-        height="50"
-        viewBox="0 0 48 48"
-      >
-        <path
-          fill="#F4511E"
-          d="M42.2,22.1L25.9,5.8C25.4,5.3,24.7,5,24,5c0,0,0,0,0,0c-0.7,0-1.4,0.3-1.9,0.8l-3.5,3.5l4.1,4.1c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3c0,0.5-0.1,0.9-0.3,1.3l4,4c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3s-1.3,3-3,3c-1.7,0-3-1.3-3-3c0-0.5,0.1-0.9,0.3-1.3l-4-4c-0.1,0-0.2,0.1-0.3,0.1v10.4c1.2,0.4,2,1.5,2,2.8c0,1.7-1.3,3-3,3s-3-1.3-3-3c0-1.3,0.8-2.4,2-2.8V18.8c-1.2-0.4-2-1.5-2-2.8c0-0.5,0.1-0.9,0.3-1.3l-4.1-4.1L5.8,22.1C5.3,22.6,5,23.3,5,24c0,0.7,0.3,1.4,0.8,1.9l16.3,16.3c0,0,0,0,0,0c0.5,0.5,1.2,0.8,1.9,0.8s1.4-0.3,1.9-0.8l16.3-16.3c0.5-0.5,0.8-1.2,0.8-1.9C43,23.3,42.7,22.6,42.2,22.1z"
-        ></path>
-      </svg>
-    ),
-  },
-  {
-    name: "Github",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        x="0px"
-        y="0px"
-        width="50"
-        height="50"
-        viewBox="0 0 50 50"
-      >
-        <path d="M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z"></path>
-      </svg>
-    ),
-  },
-
-  {
-    name: "Adobe Illustrator",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        x="0px"
-        y="0px"
-        width="50"
-        height="50"
-        viewBox="0 0 48 48"
-      >
-        <path
-          fill="#FF5722"
-          d="M6,10c0-2.209,1.791-4,4-4h28c2.209,0,4,1.791,4,4v28c0,2.209-1.791,4-4,4H10c-2.209,0-4-1.791-4-4V10z"
-        ></path>
-        <path
-          fill="#1C0802"
-          d="M9,9v30h30V9H9z M23.691,31l-0.762-2.91h-3.916L18.252,31h-3.037l4.443-14.219h2.627L26.758,31H23.691z M30.85,31h-2.773V20.434h2.773V31z M30.552,18.754c-0.271,0.28-0.636,0.42-1.099,0.42s-0.828-0.14-1.099-0.42s-0.405-0.632-0.405-1.055c0-0.43,0.137-0.781,0.41-1.055s0.639-0.41,1.094-0.41s0.82,0.137,1.094,0.41s0.41,0.625,0.41,1.055C30.957,18.122,30.822,18.474,30.552,18.754z"
-        ></path>
-        <path
-          fill="#1C0802"
-          d="M19.639 25.697L22.295 25.697 20.967 20.629z"
-        ></path>
-      </svg>
-    ),
-  },
-];
-
-// Tech Stack Array
-const techStack = [
-  {
-    name: "React",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        x="0px"
-        y="0px"
-        width="50"
-        height="50"
-        viewBox="0 0 48 48"
-      >
-        <path
-          fill="#80deea"
-          d="M24,34C11.1,34,1,29.6,1,24c0-5.6,10.1-10,23-10c12.9,0,23,4.4,23,10C47,29.6,36.9,34,24,34z M24,16	c-12.6,0-21,4.1-21,8c0,3.9,8.4,8,21,8s21-4.1,21-8C45,20.1,36.6,16,24,16z"
-        ></path>
-        <path
-          fill="#80deea"
-          d="M15.1,44.6c-1,0-1.8-0.2-2.6-0.7C7.6,41.1,8.9,30.2,15.3,19l0,0c3-5.2,6.7-9.6,10.3-12.4c3.9-3,7.4-3.9,9.8-2.5	c2.5,1.4,3.4,4.9,2.8,9.8c-0.6,4.6-2.6,10-5.6,15.2c-3,5.2-6.7,9.6-10.3,12.4C19.7,43.5,17.2,44.6,15.1,44.6z M32.9,5.4	c-1.6,0-3.7,0.9-6,2.7c-3.4,2.7-6.9,6.9-9.8,11.9l0,0c-6.3,10.9-6.9,20.3-3.6,22.2c1.7,1,4.5,0.1,7.6-2.3c3.4-2.7,6.9-6.9,9.8-11.9	c2.9-5,4.8-10.1,5.4-14.4c0.5-4-0.1-6.8-1.8-7.8C34,5.6,33.5,5.4,32.9,5.4z"
-        ></path>
-        <path
-          fill="#80deea"
-          d="M33,44.6c-5,0-12.2-6.1-17.6-15.6C8.9,17.8,7.6,6.9,12.5,4.1l0,0C17.4,1.3,26.2,7.8,32.7,19	c3,5.2,5,10.6,5.6,15.2c0.7,4.9-0.3,8.3-2.8,9.8C34.7,44.4,33.9,44.6,33,44.6z M13.5,5.8c-3.3,1.9-2.7,11.3,3.6,22.2	c6.3,10.9,14.1,16.1,17.4,14.2c1.7-1,2.3-3.8,1.8-7.8c-0.6-4.3-2.5-9.4-5.4-14.4C24.6,9.1,16.8,3.9,13.5,5.8L13.5,5.8z"
-        ></path>
-        <circle cx="24" cy="24" r="4" fill="#80deea"></circle>
-      </svg>
-    ),
-  },
-  {
-    name: "Next.js",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        x="0px"
-        y="0px"
-        width="50"
-        height="50"
-        viewBox="0 0 48 48"
-      >
-        <linearGradient
-          id="NRNx2IPDe7PJlJvrxOKgWa_MWiBjkuHeMVq_gr1"
-          x1="24"
-          x2="24"
-          y1="43.734"
-          y2="4.266"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset="0" stopColor="#0a070a"></stop>
-          <stop offset=".465" stopColor="#2b2b2b"></stop>
-          <stop offset="1" stopColor="#4b4b4b"></stop>
-        </linearGradient>
-        <circle
-          cx="24"
-          cy="24"
-          r="19.734"
-          fill="url(#NRNx2IPDe7PJlJvrxOKgWa_MWiBjkuHeMVq_gr1)"
-        ></circle>
-        <rect
-          width="3.023"
-          height="15.996"
-          x="15.992"
-          y="16.027"
-          fill="#fff"
-        ></rect>
-        <linearGradient
-          id="NRNx2IPDe7PJlJvrxOKgWb_MWiBjkuHeMVq_gr2"
-          x1="30.512"
-          x2="30.512"
-          y1="33.021"
-          y2="18.431"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset=".377" stopColor="#fff" stopOpacity="0"></stop>
-          <stop offset=".666" stopColor="#fff" stopOpacity=".3"></stop>
-          <stop offset=".988" stopColor="#fff"></stop>
-        </linearGradient>
-        <rect
-          width="2.953"
-          height="14.59"
-          x="29.035"
-          y="15.957"
-          fill="url(#NRNx2IPDe7PJlJvrxOKgWb_MWiBjkuHeMVq_gr2)"
-        ></rect>
-        <linearGradient
-          id="NRNx2IPDe7PJlJvrxOKgWc_MWiBjkuHeMVq_gr3"
-          x1="22.102"
-          x2="36.661"
-          y1="21.443"
-          y2="40.529"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset=".296" stopColor="#fff"></stop>
-          <stop offset=".521" stopColor="#fff" stopOpacity=".5"></stop>
-          <stop offset=".838" stopColor="#fff" stopOpacity="0"></stop>
-        </linearGradient>
-        <polygon
-          fill="url(#NRNx2IPDe7PJlJvrxOKgWc_MWiBjkuHeMVq_gr3)"
-          points="36.781,38.094 34.168,39.09 15.992,16.027 19.508,16.027"
-        ></polygon>
-      </svg>
-    ),
-  },
-  {
-    name: "Node.js",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        x="0px"
-        y="0px"
-        width="50"
-        height="50"
-        viewBox="0 0 48 48"
-      >
-        <path
-          fill="#388e3c"
-          d="M17.204 19.122l-4.907 2.715C12.113 21.938 12 22.126 12 22.329v5.433c0 .203.113.39.297.492l4.908 2.717c.183.101.41.101.593 0l4.907-2.717C22.887 28.152 23 27.965 23 27.762v-5.433c0-.203-.113-.39-.297-.492l-4.906-2.715c-.092-.051-.195-.076-.297-.076-.103 0-.205.025-.297.076M42.451 24.013l-.818.452c-.031.017-.049.048-.049.082v.906c0 .034.019.065.049.082l.818.453c.031.017.068.017.099 0l.818-.453c.03-.017.049-.048.049-.082v-.906c0-.034-.019-.065-.05-.082l-.818-.452C42.534 24.004 42.517 24 42.5 24S42.466 24.004 42.451 24.013"
-        ></path>
-        <path
-          fill="#37474f"
-          d="M35.751,13.364l-2.389-1.333c-0.075-0.042-0.167-0.041-0.241,0.003 c-0.074,0.044-0.12,0.123-0.12,0.209L33,20.295l-2.203-1.219C30.705,19.025,30.602,19,30.5,19c-0.102,0-0.205,0.025-0.297,0.076 h0.001l-4.907,2.715C25.113,21.892,25,22.08,25,22.282v5.433c0,0.203,0.113,0.39,0.297,0.492l4.908,2.717 c0.183,0.101,0.41,0.101,0.593,0l4.907-2.717C35.887,28.106,36,27.918,36,27.715V13.788C36,13.612,35.904,13.45,35.751,13.364z M32.866,26.458l-2.23,1.235c-0.083,0.046-0.186,0.046-0.269,0l-2.231-1.235C28.051,26.412,28,26.326,28,26.234v-2.47 c0-0.092,0.051-0.177,0.135-0.224l2.231-1.234h-0.001c0.042-0.023,0.088-0.034,0.135-0.034c0.047,0,0.093,0.012,0.135,0.034 l2.23,1.234C32.949,23.587,33,23.673,33,23.765v2.47C33,26.326,32.949,26.412,32.866,26.458z"
-        ></path>
-        <path
-          fill="#2e7d32"
-          d="M17.204,19.122L12,27.762c0,0.203,0.113,0.39,0.297,0.492l4.908,2.717 c0.183,0.101,0.41,0.101,0.593,0L23,22.329c0-0.203-0.113-0.39-0.297-0.492l-4.906-2.715c-0.092-0.051-0.195-0.076-0.297-0.076 c-0.103,0-0.205,0.025-0.297,0.076"
-        ></path>
-        <path
-          fill="#4caf50"
-          d="M17.204,19.122l-4.907,2.715C12.113,21.938,12,22.126,12,22.329l5.204,8.642 c0.183,0.101,0.41,0.101,0.593,0l4.907-2.717C22.887,28.152,23,27.965,23,27.762l-5.203-8.64c-0.092-0.051-0.195-0.076-0.297-0.076 c-0.103,0-0.205,0.025-0.297,0.076"
-        ></path>
-        <path
-          fill="#37474f"
-          d="M47.703 21.791l-4.906-2.715C42.705 19.025 42.602 19 42.5 19c-.102 0-.205.025-.297.076h.001l-4.907 2.715C37.114 21.892 37 22.084 37 22.294v5.411c0 .209.114.402.297.503l4.908 2.717c.184.102.409.102.593 0l2.263-1.253c.207-.115.206-.412-.002-.526l-4.924-2.687C40.052 26.412 40 26.325 40 26.231v-2.466c0-.092.05-.177.13-.221l2.235-1.236h-.001c.042-.023.088-.034.135-.034.047 0 .093.012.135.034l2.235 1.237c.08.044.13.129.13.221v2.012c0 .086.046.166.121.209.075.042.167.042.242-.001l2.398-1.393c.148-.086.24-.245.24-.417v-1.88C48 22.085 47.886 21.892 47.703 21.791zM10.703 21.791l-4.906-2.715C5.705 19.025 5.602 19 5.5 19c-.102 0-.205.025-.297.076h.001l-4.907 2.715C.114 21.892 0 22.084 0 22.294v7.465c0 .086.046.166.121.209.075.042.167.042.242-.001l2.398-1.393C2.909 28.488 3 28.329 3 28.157v-4.393c0-.092.05-.177.13-.221l2.235-1.236H5.365c.042-.023.088-.034.135-.034.047 0 .093.012.135.034l2.235 1.237C7.95 23.588 8 23.673 8 23.765v4.393c0 .172.091.331.24.417l2.398 1.393c.075.043.167.043.242.001C10.954 29.925 11 29.845 11 29.759v-7.464C11 22.085 10.886 21.892 10.703 21.791z"
-        ></path>
-      </svg>
-    ),
-  },
-  {
-    name: "TailwindCSS",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        x="0px"
-        y="0px"
-        width="50"
-        height="50"
-        viewBox="0 0 48 48"
-      >
-        <path
-          fill="#00acc1"
-          d="M24,9.604c-6.4,0-10.4,3.199-12,9.597c2.4-3.199,5.2-4.398,8.4-3.599 c1.826,0.456,3.131,1.781,4.576,3.247C27.328,21.236,30.051,24,36,24c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.6 c-1.825-0.456-3.13-1.781-4.575-3.247C32.672,12.367,29.948,9.604,24,9.604L24,9.604z M12,24c-6.4,0-10.4,3.199-12,9.598 c2.4-3.199,5.2-4.399,8.4-3.599c1.825,0.457,3.13,1.781,4.575,3.246c2.353,2.388,5.077,5.152,11.025,5.152 c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.599c-1.826-0.456-3.131-1.781-4.576-3.246C20.672,26.764,17.949,24,12,24 L12,24z"
-        ></path>
-      </svg>
-    ),
-  },
-  {
-    name: "Redux",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        x="0px"
-        y="0px"
-        width="50"
-        height="50"
-        viewBox="0 0 48 48"
-      >
-        <path
-          fill="#7e57c2"
-          d="M23,4c-6.617,0-12,7.27-12,16.205c0,4.834,1.582,9.169,4.078,12.136C15.03,32.554,15,32.773,15,33	c0,1.657,1.343,3,3,3s3-1.343,3-3s-1.343-3-3-3c-0.315,0-0.612,0.062-0.897,0.152C15.206,27.731,14,24.175,14,20.205	C14,12.924,18.037,7,23,7c3.837,0,7.111,3.547,8.404,8.518c1.122,0.346,2.237,0.782,3.33,1.308C33.579,9.508,28.759,4,23,4z"
-        ></path>
-        <path
-          fill="#7e57c2"
-          d="M35.507,20.084c-3.947-2.392-8.374-3.442-12.182-2.959C22.775,16.444,21.943,16,21,16	c-1.657,0-3,1.343-3,3s1.343,3,3,3c1.272,0,2.353-0.795,2.789-1.912c3.118-0.379,6.812,0.531,10.163,2.563	c6.403,3.881,9.67,10.569,7.282,14.911c-0.827,1.504-2.286,2.572-4.218,3.09c-2.286,0.611-5.007,0.394-7.727-0.528	c-0.839,0.772-1.749,1.498-2.725,2.168c2.552,1.117,5.196,1.704,7.669,1.704c1.24,0,2.438-0.147,3.559-0.447	c2.741-0.733,4.841-2.304,6.071-4.542C47.016,33.276,43.267,24.787,35.507,20.084z"
-        ></path>
-        <path
-          fill="#7e57c2"
-          d="M35,28.992C35,27.34,33.657,26,32,26s-3,1.34-3,2.992c0,0.669,0.228,1.281,0.6,1.779	c-1.279,2.802-3.744,5.567-7.062,7.578c-3.865,2.344-8.185,3.202-11.555,2.302c-1.932-0.518-3.391-1.586-4.218-3.09	c-1.702-3.094-0.521-7.376,2.61-10.988c-0.323-1.144-0.562-2.34-0.706-3.575c-5.07,4.797-7.109,11.323-4.532,16.009	c1.23,2.238,3.33,3.809,6.071,4.542c1.121,0.3,2.318,0.447,3.559,0.447c3.346,0,7.007-1.068,10.326-3.08	c3.836-2.325,6.683-5.577,8.209-8.962C33.815,31.801,35,30.541,35,28.992z"
-        ></path>
-      </svg>
-    ),
-  },
-  {
-    name: "JavaScript",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        x="0px"
-        y="0px"
-        width="50"
-        height="50"
-        viewBox="0 0 48 48"
-      >
-        <path fill="#ffd600" d="M6,42V6h36v36H6z"></path>
-        <path
-          fill="#000001"
-          d="M29.538 32.947c.692 1.124 1.444 2.201 3.037 2.201 1.338 0 2.04-.665 2.04-1.585 0-1.101-.726-1.492-2.198-2.133l-.807-.344c-2.329-.988-3.878-2.226-3.878-4.841 0-2.41 1.845-4.244 4.728-4.244 2.053 0 3.528.711 4.592 2.573l-2.514 1.607c-.553-.988-1.151-1.377-2.078-1.377-.946 0-1.545.597-1.545 1.377 0 .964.6 1.354 1.985 1.951l.807.344C36.452 29.645 38 30.839 38 33.523 38 36.415 35.716 38 32.65 38c-2.999 0-4.702-1.505-5.65-3.368L29.538 32.947zM17.952 33.029c.506.906 1.275 1.603 2.381 1.603 1.058 0 1.667-.418 1.667-2.043V22h3.333v11.101c0 3.367-1.953 4.899-4.805 4.899-2.577 0-4.437-1.746-5.195-3.368L17.952 33.029z"
-        ></path>
-      </svg>
-    ),
-  },
-  {
-    name: "TypeScript",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        x="0px"
-        y="0px"
-        width="50"
-        height="50"
-        viewBox="0 0 48 48"
-      >
-        <rect width="36" height="36" x="6" y="6" fill="#1976d2"></rect>
-        <polygon
-          fill="#fff"
-          points="27.49,22 14.227,22 14.227,25.264 18.984,25.264 18.984,40 22.753,40 22.753,25.264 27.49,25.264"
-        ></polygon>
-        <path
-          fill="#fff"
-          d="M39.194,26.084c0,0-1.787-1.192-3.807-1.192s-2.747,0.96-2.747,1.986 c0,2.648,7.381,2.383,7.381,7.712c0,8.209-11.254,4.568-11.254,4.568V35.22c0,0,2.152,1.622,4.733,1.622s2.483-1.688,2.483-1.92 c0-2.449-7.315-2.449-7.315-7.878c0-7.381,10.658-4.469,10.658-4.469L39.194,26.084z"
-        ></path>
-      </svg>
-    ),
-  },
-];
-
-const About = () => {
+const About = ({ openContact }) => {
   return (
-    <div
-      id="about"
-      className="w-full bg-white dark:bg-black transition-colors duration-300"
-    >
-      <div className="max-w-screen-xl mx-auto px-8 py-16">
-        {/* Section Title */}
-        <div className="text-center mb-16">
-          <p className="text-gray-600 dark:text-gray-400 text-lg mb-4">
-            Introduction
-          </p>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white">
-            About me
-          </h2>
-        </div>
+    <div id="about" className="w-full bg-white text-black py-24 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
 
-        {/* Main Content */}
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
-          {/* Profile Image */}
-          <div className="flex-shrink-0">
-            <div className="relative w-80 h-96 rounded-3xl overflow-hidden shadow-2xl bg-gray-200 dark:bg-gray-700">
+          {/* Left Column: Label & Image */}
+          <div className="md:col-span-5 flex flex-col gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-2"
+            >
+              <div className="w-2 h-2 bg-black rounded-full" />
+              <span className="text-sm font-bold tracking-widest uppercase">About Me</span>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="relative w-full aspect-[4/5] grayscale hover:grayscale-0 transition-all duration-500 overflow-hidden"
+            >
               <Image
-                src="/assets/rohan-portfolio-2.png"
-                alt="Profile"
-                width={320}
-                height={384}
-                className="rounded-3xl object-cover shadow-2xl bg-gray-200 dark:bg-gray-700"
+                src="/assets/rohan-banner.png"
+                alt="Rohan Gawande"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-sm"
               />
-            </div>
+            </motion.div>
           </div>
 
-          {/* Content */}
-          <div className="flex-1 text-center lg:text-left">
-            {/* About Description */}
-            <div className="mb-12">
-              <p className="text-lg text-gray-900 dark:text-gray-300 leading-relaxed max-w-3xl">
-                I’m Rohan, a 24-year-old self-taught programmer and designer
-                from Mumbai specializing in full stack web development, web
-                apps, and UI/UX design. With hands-on experience across projects
-                for startups and established companies, I’ve managed everything
-                from client requirements and analysis through design, coding,
-                testing, and deployment. Every live project in my portfolio is
-                built end-to-end by me, ensuring top quality and a smooth
-                process from start to finish.
+          {/* Right Column: Content */}
+          <div className="md:col-span-7 space-y-12 pt-0 md:pt-20">
+
+            {/* Headline */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="space-y-4"
+            >
+              <h2 className="text-4xl md:text-6xl font-medium leading-tight">
+                Hi, I'm Rohan. <br />
+                <span className="text-gray-500">Full Stack Developer from Mumbai.</span>
+              </h2>
+            </motion.div>
+
+            {/* Description with Scroll Reveal */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+                I’m Rohan, a 24-year-old self-taught programmer and designer from Mumbai specializing in full stack web development, web apps, and UI/UX design. With hands-on experience across projects for startups and established companies, I’ve managed everything from client requirements and analysis through design, coding, testing, and deployment. Every live project in my portfolio is built end-to-end by me, ensuring top quality and a smooth process from start to finish.
               </p>
-            </div>
+            </motion.div>
 
-            {/* Tools Section */}
-            <div className="mb-12">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 md:mb-2">
-                Tools I use
-              </h3>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                {tools.map((tool, index) => (
-                  <div key={index} className="group relative">
-                    <div className="w-16 h-16 bg-white dark:bg-gray-800 rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
-                      {tool.icon}
-                    </div>
-                    <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="text-xs text-gray-600 dark:text-gray-400 font-bold whitespace-nowrap">
-                        {tool.name}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            {/* Start Project Button */}
+            <motion.button
+              onClick={openContact}
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="btn-hover-fill px-8 py-4 bg-[#f0f0f0] text-black text-lg font-bold rounded-lg transition-all"
+            >
+              Start project
+            </motion.button>
 
-            {/* Tech Stack Section */}
-            <div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 md:mb-2">
-                Tech Stack I use
-              </h3>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                {techStack.map((tech, index) => (
-                  <div key={index} className="group relative">
-                    <div className="w-16 h-16 bg-white dark:bg-gray-800 rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
-                      {tech.icon}
-                    </div>
-                    <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="text-xs text-gray-600 dark:text-gray-400 whitespace-nowrap font-bold">
-                        {tech.name}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>

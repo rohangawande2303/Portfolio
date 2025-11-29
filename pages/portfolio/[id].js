@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { FaArrowLeft, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Navbar from "../../components/Navbar";
+import FooterContact from "../../components/FooterContact";
 
 // Portfolio data with descriptions formatted using <br /> for line breaks
 const portfolios = [
@@ -245,8 +247,7 @@ const portfolios = [
 
 const TechTag = ({ tech }) => (
   <motion.span
-    className={`inline-block px-3 py-1.5 rounded-full text-sm font-medium mr-3 mb-3 border transition-all duration-300 
-      bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100`}
+    className="inline-block px-4 py-2 rounded-full text-sm font-medium mr-3 mb-3 border border-gray-200 bg-gray-50 text-gray-800"
     whileHover={{ scale: 1.05, y: -2 }}
     whileTap={{ scale: 0.95 }}
   >
@@ -254,7 +255,7 @@ const TechTag = ({ tech }) => (
   </motion.span>
 );
 
-const OnePortfolio = ({ portfolio }) => {
+const OnePortfolio = ({ portfolio, openContact }) => {
   const router = useRouter();
   const { title, imageSrc, desc, demo, github, technologies = [] } = portfolio;
 
@@ -273,145 +274,125 @@ const OnePortfolio = ({ portfolio }) => {
   };
 
   return (
-    <motion.div
-      className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-black dark:via-gray-900 dark:to-gray-950 transition-all duration-500"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-    >
-      {/* Header Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-white/20 dark:bg-black/30 backdrop-blur-sm"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-8">
-          {/* Navigation */}
-          <div className="flex justify-between items-center mb-8">
+    <div className="bg-white text-black min-h-screen">
+      <Navbar openContact={openContact} theme="light" />
+
+      <motion.div
+        className="pt-32 pb-16"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+
+          {/* Back Button */}
+          <div className="mb-12">
             <motion.button
               onClick={() => router.push("/portfolio")}
-              className="group flex items-center space-x-2 px-4 py-2 rounded-lg text-gray-600 hover:text-gray-900 bg-white/50 hover:bg-white/80 dark:bg-gray-800/60 dark:hover:bg-gray-700/60 dark:text-gray-300 dark:hover:text-white backdrop-blur-sm border border-gray-200/50 dark:border-gray-700 transition-all duration-300"
+              className="group flex items-center space-x-2 text-gray-500 hover:text-black transition-colors"
               whileHover={{ x: -5 }}
               whileTap={{ scale: 0.95 }}
             >
               <FaArrowLeft className="transition-transform duration-300 group-hover:-translate-x-1" />
-              <span className="font-medium">Back to Portfolio</span>
+              <span className="font-medium uppercase tracking-wide text-sm">Back to Projects</span>
             </motion.button>
           </div>
 
           {/* Hero Title */}
           <motion.div
-            className="text-center mb-12"
+            className="mb-16"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8">
               {title}
             </h1>
-            <div className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-blue-600"></div>
+            <div className="w-full h-[1px] bg-gray-200"></div>
           </motion.div>
-        </div>
-      </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        {/* Project Image */}
-        <motion.div
-          className="mb-16"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-        >
-          <div className="relative mx-auto max-w-2xl rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-gray-900 backdrop-blur-sm border border-gray-200/30 dark:border-gray-700">
-            <div className="relative group rounded-xl overflow-hidden">
-              <Image
-                src={imageSrc}
-                alt={title}
-                width={800}
-                height={450}
-                className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          {/* Main Content */}
+          <div className="grid lg:grid-cols-12 gap-16">
+
+            {/* Left Column: Image & Tech */}
+            <div className="lg:col-span-7 space-y-12">
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+              >
+                <div className="relative rounded-lg overflow-hidden bg-gray-100 aspect-video">
+                  <Image
+                    src={imageSrc}
+                    alt={title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                <h3 className="text-sm font-bold uppercase tracking-widest mb-6 text-gray-400">Technologies</h3>
+                <div className="flex flex-wrap">
+                  {technologies.length > 0 ? (
+                    technologies.map((tech, index) => (
+                      <TechTag key={index} tech={tech} />
+                    ))
+                  ) : (
+                    <p className="text-gray-500">No technologies specified.</p>
+                  )}
+                </div>
+              </motion.div>
             </div>
-          </div>
-        </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Technologies Section */}
-          <motion.div
-            className="lg:col-span-1"
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          >
-            <div className="sticky top-8 rounded-2xl p-8 bg-gradient-to-br from-white to-gray-50/80 dark:from-gray-900 dark:to-gray-800 border border-gray-200/30 dark:border-gray-700 backdrop-blur-sm shadow-xl">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-                Tech Stack
-              </h2>
-              <div className="space-y-3">
-                {technologies.length > 0 ? (
-                  technologies.map((tech, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.5 + index * 0.1 }}
-                    >
-                      <TechTag tech={tech} />
-                    </motion.div>
-                  ))
-                ) : (
-                  <p className="text-gray-600 dark:text-gray-300">
-                    No technologies specified for this project.
-                  </p>
-                )}
-              </div>
+            {/* Right Column: Description & Actions */}
+            <div className="lg:col-span-5 space-y-12">
+              <motion.div
+                initial={{ x: 50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+              >
+                <h3 className="text-sm font-bold uppercase tracking-widest mb-6 text-gray-400">Overview</h3>
+                <div
+                  className="prose prose-lg max-w-none text-gray-600 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: desc }}
+                />
+              </motion.div>
 
-              {/* Action Buttons */}
-              <div className="mt-8 space-y-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-8 border-t border-gray-100">
                 <motion.button
                   onClick={redirectToDemo}
-                  className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-4 rounded-xl font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-                  whileHover={{ scale: 1.02, y: -2 }}
+                  className="flex-1 flex items-center justify-center space-x-2 bg-black text-white px-8 py-4 rounded-lg font-bold hover:bg-gray-800 transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <FaExternalLinkAlt />
-                  <span>View Live Demo</span>
+                  <span>Live Demo</span>
                 </motion.button>
 
                 <motion.button
                   onClick={redirectToGitHub}
-                  className="w-full flex items-center justify-center space-x-2 px-6 py-4 rounded-xl font-semibold border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300 shadow-lg hover:shadow-xl"
-                  whileHover={{ scale: 1.02, y: -2 }}
+                  className="flex-1 flex items-center justify-center space-x-2 px-8 py-4 rounded-lg font-bold border border-gray-200 hover:bg-gray-50 transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <FaGithub />
-                  <span>View Source Code</span>
+                  <span>Source Code</span>
                 </motion.button>
               </div>
             </div>
-          </motion.div>
 
-          {/* Description Section */}
-          <motion.div
-            className="lg:col-span-2"
-            initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            <div className="rounded-2xl p-8 bg-gradient-to-br from-white to-gray-50/80 dark:from-gray-900 dark:to-gray-800 border border-gray-200/30 dark:border-gray-700 backdrop-blur-sm shadow-xl">
-              <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
-                Project Overview
-              </h2>
-              <div className="prose prose-lg max-w-none prose-gray prose-headings:text-gray-900 prose-p:text-gray-700 dark:prose-invert">
-                <div
-                  className="leading-relaxed space-y-6 dark:text-white"
-                  dangerouslySetInnerHTML={{ __html: desc }}
-                />
-              </div>
-            </div>
-          </motion.div>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+
+      <FooterContact openContact={openContact} />
+    </div>
   );
 };
 

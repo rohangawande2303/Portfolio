@@ -1,172 +1,141 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-import Netflix from "../public/assets/portfolio/Netflix-clone.jpg";
-import Ecommerce from "../public/assets/portfolio/E-commerce.jpg";
-import reactWeather from "../public/assets/portfolio/reactWeather.jpg";
+// Import portfolio images
 import Disney from "../public/assets/portfolio/Disney-clone.jpg.png";
-import socialpulse from "../public/assets/portfolio/social-pulse-agency.png";
+import Ecommerce from "../public/assets/portfolio/E-commerce.jpg";
 import foodapp from "../public/assets/portfolio/food-ordering-app.png";
+import socialpulse from "../public/assets/portfolio/social-pulse-agency.png";
 import RealEstate from "../public/assets/portfolio/aarav-realty.png";
 import rutu from "../public/assets/portfolio/rutu-group.png";
-import RealEstate2 from "../public/assets/portfolio/trade-centre.png";
+import realestate2 from "../public/assets/portfolio/trade-centre.png";
 import Beqube from "../public/assets/portfolio/beqube.png";
 import KD from "../public/assets/portfolio/kd-rmc-llp.png";
 
+const portfolios = [
+  {
+    id: 1,
+    title: "Disney Clone",
+    subtitle: "Streaming Platform Clone",
+    imageSrc: Disney,
+    url: "disney-app",
+  },
+  {
+    id: 2,
+    title: "e-commerce app",
+    subtitle: "Online Furniture Store",
+    imageSrc: Ecommerce,
+    url: "e-commerce-app",
+  },
+  {
+    id: 3,
+    title: "Food ordering app",
+    subtitle: "Food Delivery Platform",
+    imageSrc: foodapp,
+    url: "food-ordering-app",
+  },
+  {
+    id: 4,
+    title: "digital marketing app",
+    subtitle: "Agency Website & Lead Gen",
+    imageSrc: socialpulse,
+    url: "social-pulse-agency",
+  },
+  {
+    id: 5,
+    title: "Real Estate app",
+    subtitle: "Property Listing Platform",
+    imageSrc: RealEstate,
+    url: "real-estate",
+  },
+  {
+    id: 7,
+    title: "rutu group website",
+    subtitle: "Corporate Real Estate Site",
+    imageSrc: rutu,
+    url: "rutu-group",
+  },
+  {
+    id: 8,
+    title: "Real Estate Landing Page",
+    subtitle: "Property Sales Landing Page",
+    imageSrc: realestate2,
+    url: "trade-centre",
+  },
+  {
+    id: 9,
+    title: "Real Estate Consultancy",
+    subtitle: "Consultancy Business Site",
+    imageSrc: Beqube,
+    url: "beqube",
+  },
+  {
+    id: 10,
+    title: "KD RMC LLP Concreate company",
+    subtitle: "Industrial Company Website",
+    imageSrc: KD,
+    url: "kd-rmc-llp",
+  },
+];
+
 const Portfolio = () => {
-  const portfolios = [
-    {
-      id: 4,
-      title: "Digital Marketing App",
-      category: "web design",
-      imageSrc: socialpulse,
-      url: "social-pulse-agency",
-    },
-    {
-      id: 3,
-      title: "Food Ordering App",
-      category: "Web app",
-      imageSrc: foodapp,
-      url: "food-ordering-app",
-    },
-    {
-      id: 7,
-      title: "Rutu Group Website",
-      category: "web design",
-      imageSrc: rutu,
-      url: "rutu-group",
-    },
-    {
-      id: 9,
-      title: "Real Estate Consultancy",
-      category: "Web Design and Development",
-      imageSrc: Beqube,
-      url: "beqube",
-    },
-    {
-      id: 2,
-      title: "E-commerce App",
-      category: "Web app",
-      imageSrc: Ecommerce,
-      url: "e-commerce-app",
-    },
-    {
-      id: 8,
-      title: "Real Estate Landing Page",
-      category: "Landing Page",
-      imageSrc: RealEstate2,
-      url: "trade-centre",
-    },
-    {
-      id: 10,
-      title: "KD RMC LLP Concreate company",
-      category: "Web Design and Development",
-      imageSrc: KD,
-      url: "kd-rmc-llp",
-    },
-
-    {
-      id: 5,
-      title: "Real Estate App",
-      category: "Web design",
-      imageSrc: RealEstate,
-      url: "real-estate",
-    },
-    {
-      id: 1,
-      title: "Disney-clone App",
-      category: "web design",
-      imageSrc: Disney,
-      url: "disney-app",
-    },
-  ];
-
   return (
-    <section
-      id="work"
-      className="w-full py-20 bg-white dark:bg-black transition-colors duration-300"
-    >
-      <div className="max-w-screen-xl mx-auto px-6 text-center">
-        {/* Section Heading */}
-        <h3 className="text-lg text-gray-600 dark:text-gray-400 mb-2">
-          My portfolio
-        </h3>
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-          My latest work
-        </h2>
-        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">
-          Welcome to my web development portfolio! Explore a collection of
-          projects showcasing my expertise in Full Stack development.
-        </p>
+    <div id="work" className="w-full bg-white text-black py-24 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
 
-        {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {portfolios
-            .slice(0, 9)
-            .map(({ id, title, category, imageSrc, url }) => (
-              <Link key={id} href={`/portfolio/${url}`}>
-                <div
-                  className="group relative overflow-hidden rounded-lg cursor-pointer 
-                  bg-gradient-to-br from-blue-500/20 via-transparent to-blue-600/20
-                  border border-blue-500/30
-                  shadow-[0_0_20px_rgba(59,130,246,0.3),inset_0_1px_0_rgba(255,255,255,0.1)]
-                  hover:shadow-[0_0_40px_rgba(59,130,246,0.5),inset_0_1px_0_rgba(255,255,255,0.2)]
-                  hover:border-blue-400/50
-                  transition-all duration-300"
-                  style={{
-                    background:
-                      "linear-gradient(145deg, rgba(59,130,246,0.1), rgba(147,197,253,0.05), rgba(59,130,246,0.1))",
-                    backdropFilter: "blur(10px)",
-                  }}
-                >
+        {/* Header */}
+        <div className="flex items-center gap-2 mb-16">
+          <div className="w-2 h-2 bg-black rounded-full" />
+          <span className="text-sm font-bold tracking-widest uppercase">Projects</span>
+        </div>
+
+        {/* Grid - 3x3 for desktop, responsive for mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {portfolios.map(({ id, title, subtitle, imageSrc, url }) => (
+            <Link key={id} href={`/portfolio/${url}`}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="cursor-pointer group"
+              >
+                {/* Image Container - Smaller size */}
+                <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100 mb-4 rounded-lg">
                   <Image
                     src={imageSrc}
                     alt={title}
-                    className="object-cover w-full h-64 group-hover:scale-105 duration-300"
+                    layout="fill"
+                    objectFit="cover"
+                    className="group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
-                  {/* Card Overlay */}
-                  <div
-                    className="absolute bottom-4 left-4 right-4 
-                    rounded-md px-4 py-3 flex items-center justify-between 
-                    bg-white/90 dark:bg-neutral-900/90 transition duration-300"
-                  >
-                    <div>
-                      <h3 className="font-semibold text-gray-900 dark:text-white">
-                        {title}
-                      </h3>
-                      <p className="text-sm text-gray-800 dark:text-gray-500">
-                        {category}
-                      </p>
-                    </div>
-                    <span
-                      className="p-2 rounded-full border border-gray-400 dark:border-gray-600 
-                      group-hover:bg-gray-100 dark:group-hover:bg-neutral-800 
-                      group-hover:border-transparent text-gray-700 dark:text-gray-200 transition"
-                    >
-                      <ArrowUpRight size={18} />
-                    </span>
-                  </div>
                 </div>
-              </Link>
-            ))}
+
+                {/* Content */}
+                <div className="space-y-1">
+                  <h3 className="text-lg font-medium capitalize group-hover:underline underline-offset-4 decoration-1">
+                    {title}
+                  </h3>
+                  <p className="text-gray-500 text-sm">{subtitle}</p>
+                </div>
+
+              </motion.div>
+            </Link>
+          ))}
         </div>
 
-        {/* Show More Button */}
-        <div className="mt-12 flex justify-center">
+        {/* View All Projects Button */}
+        <div className="mt-16 flex justify-center">
           <Link href="/portfolio">
-            <button
-              className="flex items-center gap-2 px-6 py-3 border rounded-full font-semi-bold 
-              text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:border-gray-600 
-              dark:hover:bg-neutral-800 transition"
-            >
-              Show more →
+            <button className="btn-hover-fill px-8 py-4 bg-[#f0f0f0] text-black text-lg font-bold rounded-lg transition-all">
+              View All Projects
             </button>
           </Link>
         </div>
+
       </div>
-    </section>
+    </div>
   );
 };
 

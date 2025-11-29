@@ -1,138 +1,163 @@
 "use client";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import { Moon, Sun, Menu, X } from "lucide-react";
-import { useTheme } from "./ThemeProvider";
-import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
-export default function Navbar() {
-  const { darkMode, setDarkMode } = useTheme();
+export default function Navbar({ openContact, theme = "dark" }) {
   const router = useRouter();
   const pathname = router.pathname;
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  // ✅ Replace this with your actual WhatsApp number
-  const whatsappNumber = "919967653844";
-  const whatsappMessage =
-    "Hi! I came across your website and would like to connect.";
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    whatsappMessage
-  )}`;
+  // Detect scroll for navbar styling
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleLogoClick = (e) => {
     e.preventDefault();
-
     if (pathname === "/" || pathname === "/home") {
-      const homeSection = document.getElementById("home");
-      if (homeSection) {
-        homeSection.scrollIntoView({ behavior: "smooth" });
-      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      router.push("/#home");
+      router.push("/");
     }
-
     setMenuOpen(false);
   };
 
   const handleLinkClick = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+    if (id === "contact") {
+      // Scroll to footer contact
+      const footer = document.getElementById("footer-contact");
+      if (footer) footer.scrollIntoView({ behavior: "smooth" });
+    } else {
+      const section = document.getElementById(id);
+      if (section) section.scrollIntoView({ behavior: "smooth" });
     }
     setMenuOpen(false);
   };
 
+  // Determine text color based on theme and scroll state
+  // If scrolled, always white (because bg is black)
+  // If not scrolled:
+  //   - theme="dark" (default, like home): text is white
+  //   - theme="light" (like portfolio): text is black
+  const isTextDark = theme === "light" && !scrolled;
+  const textColorClass = isTextDark ? "text-black" : "text-white";
+  const linkColorClass = isTextDark ? "text-gray-600 hover:text-black" : "text-gray-300 hover:text-white";
+  const mobileMenuButtonClass = isTextDark ? "text-black" : "text-white";
+
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 shadow-md transition-colors duration-300 ${
-        darkMode ? "bg-black text-white" : "bg-white text-black"
-      }`}
-    >
-      <div className="container mx-auto flex justify-between items-center py-4 px-6">
-        {/* Logo */}
-        <a
-          href="#home"
-          onClick={handleLogoClick}
-          className="text-3xl md:text-4xl font-bold cursor-pointer"
-        >
-          Rohan<span className="text-pink-600">.</span>
-        </a>
- 
-        {/* Desktop Links */}
-        <div className="hidden md:flex text-xl space-x-8 bg-gray-100 dark:bg-gray-800 px-6 py-2 rounded-full font-bold">
-          <Link href="#about">About</Link>
-          <Link href="#services">Services</Link>
-          <Link href="#work">My work</Link>
-          <Link href="#contact">Contact</Link>
-        </div>
-
-        {/* Right side */}
-        <div className="flex items-center space-x-4">
-          {/* Toggle Dark/Light */}
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
-          >
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-
-          {/* ✅ Desktop Connect Button -> WhatsApp */}
+    <>
+      <nav
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-black/80 backdrop-blur-md py-4" : "bg-transparent py-6"
+          }`}
+      >
+        <div className="container mx-auto flex justify-between items-center px-6 md:px-12">
+          {/* Logo */}
           <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`hidden md:inline-block px-5 py-2 rounded-full border text-xl transition ${
-              darkMode
-                ? "border-white text-white hover:bg-white hover:text-black"
-                : "border-black text-black hover:bg-black hover:text-white"
-            }`}
+            href="/"
+            onClick={handleLogoClick}
+            className={`text-xl md:text-2xl font-medium tracking-tight transition-colors ${textColorClass}`}
           >
-            Connect ↗
+            Rohan
           </a>
 
-          {/* Mobile Menu Toggle (Hamburger / X) */}
+          {/* Desktop Links */}
+          <div className="hidden md:flex items-center space-x-8 lg:space-x-12">
+            <FlipLink onClick={() => handleLinkClick("about")} className={linkColorClass}>About me</FlipLink>
+            <FlipLink onClick={() => handleLinkClick("work")} className={linkColorClass}>Projects</FlipLink>
+            <FlipLink onClick={() => handleLinkClick("services")} className={linkColorClass}>Services</FlipLink>
+            <FlipLink onClick={() => handleLinkClick("contact")} className={linkColorClass}>Contact</FlipLink>
+          </div>
+
+          {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2 z-50 relative"
+            className={`md:hidden z-50 relative transition-colors ${mobileMenuButtonClass}`}
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+            {menuOpen ? <X size={24} className={scrolled || menuOpen ? "text-white" : mobileMenuButtonClass} /> : <Menu size={24} />}
           </button>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-0 left-0 w-full h-screen transition-all duration-700 ease-in-out ${
-          menuOpen
-            ? darkMode
-              ? "bg-black text-white translate-y-0"
-              : "bg-white text-black translate-y-0"
-            : "-translate-y-full"
-        }`}
+        className={`md:hidden fixed inset-0 bg-black z-[60] transition-transform duration-500 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
-        {/* Mobile Nav Content */}
-        <div className="flex flex-col items-center justify-center h-full space-y-8 text-2xl font-medium">
-          <button onClick={() => handleLinkClick("about")}>About</button>
-          <button onClick={() => handleLinkClick("services")}>Services</button>
-          <button onClick={() => handleLinkClick("work")}>My work</button>
-          <button onClick={() => handleLinkClick("contact")}>Contact</button>
-
-          {/* ✅ Mobile Connect Button -> WhatsApp */}
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMenuOpen(false)}
-            className={`px-6 py-3 rounded-full border transition ${
-              darkMode
-                ? "border-white text-white hover:bg-white hover:text-black"
-                : "border-black text-black hover:bg-black hover:text-white"
-            }`}
+        <div className="absolute top-6 right-6">
+          <button onClick={() => setMenuOpen(false)} className="text-white">
+            <X size={24} />
+          </button>
+        </div>
+        <div className="flex flex-col items-center justify-center h-full space-y-8">
+          <button
+            onClick={() => handleLinkClick("about")}
+            className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
           >
-            Connect ↗
-          </a>
+            About me
+          </button>
+          <button
+            onClick={() => handleLinkClick("work")}
+            className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
+          >
+            Projects
+          </button>
+          <button
+            onClick={() => handleLinkClick("services")}
+            className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
+          >
+            Services
+          </button>
+          <button
+            onClick={() => handleLinkClick("contact")}
+            className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
+          >
+            contact
+          </button>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
+
+const FlipLink = ({ children, onClick, className }) => {
+  return (
+    <button
+      onClick={onClick}
+      className={`relative block overflow-hidden whitespace-nowrap text-sm font-medium uppercase tracking-wide transition-colors ${className}`}
+    >
+      <motion.div
+        initial="initial"
+        whileHover="hovered"
+        className="relative block"
+      >
+        <motion.span
+          variants={{
+            initial: { y: 0 },
+            hovered: { y: "-100%" },
+          }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="block"
+        >
+          {children}
+        </motion.span>
+        <motion.span
+          variants={{
+            initial: { y: "100%" },
+            hovered: { y: 0 },
+          }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="absolute inset-0 block"
+        >
+          {children}
+        </motion.span>
+      </motion.div>
+    </button>
+  );
+};

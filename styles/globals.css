@@ -1,45 +1,82 @@
-/* Import Cormorant Garamond font from Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-dark: #1a1a1a;
+  --bg-light: #ffffff;
+}
+
 @layer base {
   html {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
   }
-}
 
-/* Add this CSS to your global CSS file or component */
-.typed-text {
-  display: inline-block;
-  overflow: hidden;
-}
-
-.typed-text::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background-color: #3182ce; /* Change color if needed */
-  animation: typing 5s infinite linear;
-}
-
-@keyframes typing {
-  0% {
-    width: 0;
+  body {
+    @apply bg-white text-black;
+    /* Default to light, sections will override */
   }
-  50% {
-    width: 100%;
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
   }
-  100% {
-    width: 0;
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-full;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
   }
 }
 
+/* Scroll Margin for Navbar */
 section[id],
 div[id] {
-  scroll-margin-top: 120px; /* Adjust this value based on your navbar height + desired spacing */
+  scroll-margin-top: 0px;
+  /* Reset, handle padding in sections */
+}
+
+/* Button Hover Animation (Fill from bottom) */
+.btn-hover-fill {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.btn-hover-fill::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: black;
+  transition: height 0.3s ease;
+  z-index: -1;
+}
+
+.btn-hover-fill:hover::before {
+  height: 100%;
+}
+
+.btn-hover-fill:hover {
+  color: white;
+}
+
+/* Utilities */
+.glass-panel {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
 }
