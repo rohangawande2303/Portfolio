@@ -3,19 +3,10 @@ import ServicePageLayout from "../../components/ServicePageLayout";
 
 // Import images for projects
 import Disney from "../../public/assets/portfolio/Disney-clone.jpg.png";
-import Ecommerce from "../../public/assets/portfolio/E-commerce.jpg";
-import foodapp from "../../public/assets/portfolio/food-ordering-app.png";
-import socialpulse from "../../public/assets/portfolio/social-pulse-agency.png";
-import RealEstate from "../../public/assets/portfolio/aarav-realty.png";
-import rutu from "../../public/assets/portfolio/rutu-group.png";
-import realestate2 from "../../public/assets/portfolio/trade-centre.png";
-import Beqube from "../../public/assets/portfolio/beqube.png";
+
 
 const projects = [
-    { id: 1, title: "Digital Marketing App", imageSrc: socialpulse, url: "social-pulse-agency" },
-    { id: 2, title: "Rutu Group Website", imageSrc: rutu, url: "rutu-group" },
-    { id: 3, title: "Real Estate Landing Page", imageSrc: realestate2, url: "trade-centre" },
-    { id: 4, title: "Real Estate Consultancy", imageSrc: Beqube, url: "beqube" },
+
     { id: 5, title: "Disney Clone", imageSrc: Disney, url: "disney-app" },
 ];
 

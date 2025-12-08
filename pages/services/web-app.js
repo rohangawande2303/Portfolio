@@ -3,12 +3,22 @@ import ServicePageLayout from "../../components/ServicePageLayout";
 
 import Ecommerce from "../../public/assets/portfolio/E-commerce.jpg";
 import foodapp from "../../public/assets/portfolio/food-ordering-app.png";
-import Disney from "../../public/assets/portfolio/Disney-clone.jpg.png";
+import socialpulse from "../../public/assets/portfolio/social-pulse-agency.png";
+import rutu from "../../public/assets/portfolio/rutu-group.png";
+import realestate2 from "../../public/assets/portfolio/trade-centre.png";
+import Beqube from "../../public/assets/portfolio/beqube.png";
+import KD from "../../public/assets/portfolio/kd-rmc-llp.png";
+import Aarav from "../../public/assets/portfolio/aarav-realty.png";
 
 const projects = [
-    { id: 1, title: "E-commerce App", subtitle: "Online Furniture Store", imageSrc: Ecommerce, url: "e-commerce-app" },
+    { id: 1, title: "Digital Marketing App", imageSrc: socialpulse, url: "social-pulse-agency" },
     { id: 2, title: "Food Ordering App", subtitle: "Food Delivery Platform", imageSrc: foodapp, url: "food-ordering-app" },
-    { id: 3, title: "Disney Clone", subtitle: "Streaming Platform Clone", imageSrc: Disney, url: "disney-app" },
+    { id: 3, title: "E-commerce App", subtitle: "Online Furniture Store", imageSrc: Ecommerce, url: "e-commerce-app" },
+    { id: 4, title: "Rutu Group Website", imageSrc: rutu, url: "rutu-group" },
+    { id: 5, title: "Real Estate Landing Page", imageSrc: realestate2, url: "trade-centre" },
+    { id: 6, title: "Real Estate Consultancy", imageSrc: Beqube, url: "beqube" },
+    { id: 7, title: "KD RMC LLP", subtitle: "Industrial Company Website", imageSrc: KD, url: "kd-rmc-llp" },
+    { id: 8, title: "Aarav Realty", subtitle: "Real Estate Website", imageSrc: Aarav, url: "aarav-realty" },
 ];
 
 const sequence = [

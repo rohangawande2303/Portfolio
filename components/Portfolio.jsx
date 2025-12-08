@@ -16,18 +16,11 @@ import KD from "../public/assets/portfolio/kd-rmc-llp.png";
 
 const portfolios = [
   {
-    id: 1,
-    title: "Disney Clone",
-    subtitle: "Streaming Platform Clone",
-    imageSrc: Disney,
-    url: "disney-app",
-  },
-  {
-    id: 2,
-    title: "e-commerce app",
-    subtitle: "Online Furniture Store",
-    imageSrc: Ecommerce,
-    url: "e-commerce-app",
+    id: 4,
+    title: "digital marketing app",
+    subtitle: "Agency Website & Lead Gen",
+    imageSrc: socialpulse,
+    url: "social-pulse-agency",
   },
   {
     id: 3,
@@ -37,11 +30,11 @@ const portfolios = [
     url: "food-ordering-app",
   },
   {
-    id: 4,
-    title: "digital marketing app",
-    subtitle: "Agency Website & Lead Gen",
-    imageSrc: socialpulse,
-    url: "social-pulse-agency",
+    id: 2,
+    title: "e-commerce app",
+    subtitle: "Online Furniture Store",
+    imageSrc: Ecommerce,
+    url: "e-commerce-app",
   },
   {
     id: 5,
@@ -78,13 +71,19 @@ const portfolios = [
     imageSrc: KD,
     url: "kd-rmc-llp",
   },
+  {
+    id: 1,
+    title: "Disney Clone",
+    subtitle: "Streaming Platform Clone",
+    imageSrc: Disney,
+    url: "disney-app",
+  },
 ];
 
 const Portfolio = () => {
   return (
     <div id="work" className="w-full bg-white text-black py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-
         {/* Header */}
         <div className="flex items-center gap-2 mb-16">
           <div className="w-2 h-2 bg-black rounded-full" />
@@ -99,27 +98,42 @@ const Portfolio = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
                 className="cursor-pointer group"
               >
-                {/* Image Container - Smaller size */}
-                <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100 mb-4 rounded-lg">
-                  <Image
-                    src={imageSrc}
-                    alt={title}
-                    layout="fill"
-                    objectFit="cover"
-                    className="group-hover:scale-105 transition-transform duration-500 ease-out"
-                  />
+                {/* Image Container with Overlay */}
+                <div className="relative w-full overflow-hidden mb-4 rounded-lg bg-gray-50">
+                  {/* Image */}
+                  <div className="relative w-full aspect-[16/10]">
+                    <Image
+                      src={imageSrc}
+                      alt={title}
+                      layout="fill"
+                      objectFit="contain"
+                      className="transition-all duration-500 ease-out group-hover:brightness-75"
+                    />
+
+                    {/* Gradient Overlay - appears on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    {/* View Project text - appears on hover */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                      <span className="text-white font-medium text-sm tracking-wider uppercase transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        View Project →
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Content */}
                 <div className="space-y-1">
-                  <h3 className="text-lg font-medium capitalize group-hover:underline underline-offset-4 decoration-1">
+                  <h3 className="text-lg font-medium capitalize group-hover:translate-x-1 transition-transform duration-300">
                     {title}
                   </h3>
-                  <p className="text-gray-500 text-sm">{subtitle}</p>
+                  <p className="text-gray-500 text-sm group-hover:text-gray-700 transition-colors duration-300">
+                    {subtitle}
+                  </p>
                 </div>
-
               </motion.div>
             </Link>
           ))}
@@ -133,7 +147,6 @@ const Portfolio = () => {
             </button>
           </Link>
         </div>
-
       </div>
     </div>
   );

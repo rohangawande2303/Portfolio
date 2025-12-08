@@ -76,8 +76,18 @@ const PortfoliosRoute = ({ portfolios, openContact }) => {
                       alt={title}
                       layout="fill"
                       objectFit="cover"
-                      className="group-hover:scale-105 transition-transform duration-500 ease-out"
+                      className="transition-all duration-500 ease-out group-hover:brightness-75"
                     />
+
+                    {/* Gradient Overlay - appears on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    {/* View Project text - appears on hover */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                      <span className="text-white font-medium text-sm tracking-wider uppercase transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        View Project →
+                      </span>
+                    </div>
                   </div>
 
                   {/* Content */}

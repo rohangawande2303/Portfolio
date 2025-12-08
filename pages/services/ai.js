@@ -10,8 +10,7 @@ const projects = [
     { id: 2, title: "Voice Agent", subtitle: "AI Voice Assistant", url: "voice-agent" },
     { id: 3, title: "Custom AI Products", subtitle: "Tailored AI Solutions", url: "custom-ai" },
     { id: 4, title: "WhatsApp Chatbot for Business", subtitle: "WhatsApp Business Automation", url: "whatsapp-chatbot" },
-    { id: 5, title: "Digital Marketing App", subtitle: "Agency Website & Lead Gen", imageSrc: socialpulse, url: "social-pulse-agency" },
-    { id: 6, title: "E-commerce App", subtitle: "Online Furniture Store", imageSrc: Ecommerce, url: "e-commerce-app" },
+
 ];
 
 const sequence = [
