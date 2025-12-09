@@ -243,6 +243,33 @@ const portfolios = [
     demo: "https://www.kdrmcllp.in/",
     github: "https://github.com/kdrmcllp/KD-RMC-LLP-website",
   },
+  {
+    id: "yoga-app",
+    title: "Yoga Appointment Booking App",
+    imageSrc: "/assets/portfolio/yoga.png",
+    url: "appointment-app",
+    technologies: [
+      "Next.js",
+      "Tailwind CSS",
+      "Firebase",
+      "Google Auth",
+    ],
+    desc: `• Technologies Used:  
+  <br/> - Next.js (for server-side rendering, fast performance, and SEO optimization, delivering a responsive web app with smooth navigation)  
+  <br/> - Tailwind CSS (for custom modern UI design, creating a clean, intuitive, and fully responsive interface across all devices)  
+  <br/> - Firebase (for secure authentication, real-time database, and backend services, handling user data, appointments, and scalable storage)  
+  <br/> - Google Auth (for seamless, secure user authentication via Google OAuth, enabling quick sign-ups and social login integration)
+  
+  <br/><br/>• Key Features & Functionality:  
+  <br/> - Full-stack yoga appointment booking platform with teacher profiles, class schedules, and easy booking system  
+  <br/> - Secure Google authentication for users and yoga teachers with protected routes and session management  
+  <br/> - Comprehensive admin dashboard for managing teachers, appointments, user accounts, and real-time analytics  
+  <br/> - Modern, mobile-first UI design with smooth animations, intuitive booking flow, and responsive layouts  
+  <br/> - Real-time appointment updates and notifications powered by Firebase for instant confirmations and availability tracking.`,
+    demo: "https://yoga-appointment-app-luz6.vercel.app/auth/login",
+    github: "https://github.com/rohangawande2303/Yoga-appointment-app",
+  }
+
 ];
 
 const TechTag = ({ tech }) => (

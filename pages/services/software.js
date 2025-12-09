@@ -3,14 +3,13 @@ import ServicePageLayout from "../../components/ServicePageLayout";
 
 import RealEstate from "../../public/assets/portfolio/aarav-realty.png";
 import KD from "../../public/assets/portfolio/kd-rmc-llp.png";
+import yoga from "../../public/assets/portfolio/yoga.png";
 import Beqube from "../../public/assets/portfolio/beqube.png";
 
 const projects = [
     { id: 1, title: "Real Estate CRM", subtitle: "Lead Management System", url: "real-estate-crm" }, // No image, will show Coming Soon
-    { id: 2, title: "Appointment Booking App", subtitle: "Scheduling Solution", url: "appointment-booking" }, // No image, will show Coming Soon
-    // { id: 3, title: "Real Estate App", subtitle: "Property Listing Platform", imageSrc: RealEstate, url: "real-estate" },
-    // { id: 4, title: "KD RMC LLP", subtitle: "Industrial Company Website", imageSrc: KD, url: "kd-rmc-llp" },
-    // { id: 5, title: "Real Estate Consultancy", subtitle: "Consultancy Business Site", imageSrc: Beqube, url: "beqube" },
+    { id: 2, title: "Appointment Booking App", subtitle: "Scheduling Solution", url: "appointment-app" }, // No image, will show Coming Soon
+
 ];
 
 const sequence = [

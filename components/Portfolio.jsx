@@ -13,6 +13,7 @@ import rutu from "../public/assets/portfolio/rutu-group.png";
 import realestate2 from "../public/assets/portfolio/trade-centre.png";
 import Beqube from "../public/assets/portfolio/beqube.png";
 import KD from "../public/assets/portfolio/kd-rmc-llp.png";
+import yoga from "../public/assets/portfolio/yoga.png";
 
 const portfolios = [
   {
@@ -28,6 +29,13 @@ const portfolios = [
     subtitle: "Food Delivery Platform",
     imageSrc: foodapp,
     url: "food-ordering-app",
+  },
+  {
+    id: 11,
+    title: "Yoga Appointment App",
+    subtitle: " Yoga Appointment Booking App",
+    imageSrc: yoga,
+    url: "appointment-app",
   },
   {
     id: 2,
@@ -71,6 +79,7 @@ const portfolios = [
     imageSrc: KD,
     url: "kd-rmc-llp",
   },
+
   {
     id: 1,
     title: "Disney Clone",

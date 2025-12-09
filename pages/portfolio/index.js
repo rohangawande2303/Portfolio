@@ -15,6 +15,7 @@ import rutu from "../../public/assets/portfolio/rutu-group.png";
 import realestate2 from "../../public/assets/portfolio/trade-centre.png";
 import Beqube from "../../public/assets/portfolio/beqube.png";
 import KD from "../../public/assets/portfolio/kd-rmc-llp.png";
+import yoga from "../../public/assets/portfolio/yoga.png";
 
 export const getStaticProps = async () => {
   const portfolios = [
@@ -27,6 +28,7 @@ export const getStaticProps = async () => {
     { id: 8, title: "Real Estate Landing Page", subtitle: "Property Sales Landing Page", imageSrc: realestate2, url: "trade-centre" },
     { id: 9, title: "Real Estate Consultancy", subtitle: "Consultancy Business Site", imageSrc: Beqube, url: "beqube" },
     { id: 10, title: "KD RMC LLP Concreate company", subtitle: "Industrial Company Website", imageSrc: KD, url: "kd-rmc-llp" },
+    { id: 11, title: "Yoga Appointment App", subtitle: "Yoga Appointment Booking App", imageSrc: yoga, url: "appointment-app" },
   ];
   return {
     props: { portfolios },
