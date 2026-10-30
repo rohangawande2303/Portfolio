@@ -9,8 +9,8 @@ This guide provides end-to-end instructions for deploying the modernized Next.js
 - **Current Git Branch**: `revamp-2026`
 - **Target Production Branch**: `main`
 - **Framework**: Next.js 16.4.3 (App Router, Turbopack, React 19, Tailwind CSS v4)
-- **Node.js Target**: Node.js 20.x or 22.x LTS (configured automatically by Vercel)
-- **Static Prerendering**: 17 static pages generated at build time (`/`, `/_not-found`, `/opengraph-image`, `/robots.txt`, `/sitemap.xml`, and 11 `/work/[slug]` case studies).
+- **Node.js Target**: Node.js 26.x LTS (set in Vercel Project Settings > General > Node.js Version)
+- **Static Prerendering**: 18 static pages generated at build time (`/`, `/_not-found`, `/opengraph-image`, `/robots.txt`, `/sitemap.xml`, and 11 `/work/[slug]` case studies).
 
 ---
 
