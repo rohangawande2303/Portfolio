@@ -3,8 +3,8 @@
 export default function QuickFacts() {
   const facts = [
     { label: "Based in", value: "Mumbai, India" },
-    { label: "Studying", value: "BCA" },
-    { label: "Batch", value: "2026" },
+    // { label: "Studying", value: "BCA" },
+    // { label: "Batch", value: "2026" },
     { label: "Focus", value: "Full stack · AI · Web" },
     { label: "Experience", value: "Freelance, 2024 – present" },
     { label: "Open to", value: "Full-time & freelance" },

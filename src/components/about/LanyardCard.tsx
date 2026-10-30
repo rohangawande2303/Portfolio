@@ -215,16 +215,16 @@ export default function LanyardCard() {
             {/* Fields Grid */}
             <div className="grid grid-cols-3 gap-2 py-3 px-3 rounded-xl bg-white/[0.04] border border-white/5 text-center font-mono text-[10px]">
               <div>
-                <span className="text-white/40 block text-[8px] uppercase">BATCH</span>
-                <span className="font-semibold text-white">2026</span>
+                <span className="text-white/40 block text-[8px] uppercase">PROJECTS</span>
+                <span className="font-semibold text-white">12+</span>
               </div>
               <div>
-                <span className="text-white/40 block text-[8px] uppercase">DEGREE</span>
-                <span className="font-semibold text-white">BCA</span>
+                <span className="text-white/40 block text-[8px] uppercase">OWNERSHIP</span>
+                <span className="font-semibold text-white">100%</span>
               </div>
               <div>
-                <span className="text-white/40 block text-[8px] uppercase">CITY</span>
-                <span className="font-semibold text-white">MUMBAI</span>
+                <span className="text-white/40 block text-[8px] uppercase">City</span>
+                <span className="font-semibold text-white">Mumbai</span>
               </div>
             </div>
 

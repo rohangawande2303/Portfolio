@@ -38,7 +38,7 @@ export default function Experience() {
         className="space-y-4 max-w-3xl mb-16"
       >
         <div className="font-mono text-xs uppercase tracking-widest text-[#7C83FF] flex items-center gap-2">
-          <span>05 — EXPERIENCE</span>
+          <span>— EXPERIENCE</span>
           <span className="w-1.5 h-1.5 rounded-full bg-[#7C83FF]" />
           <span>CAREER &amp; EDUCATION</span>
         </div>

@@ -89,14 +89,14 @@ export default function Hero({ onOpenContact }: HeroProps) {
 
           {/* Subline */}
           <p className="text-lg sm:text-xl text-[var(--text-muted)] font-light leading-relaxed max-w-xl">
-            I build and ship complete products: multi-tenant SaaS, AI-integrated platforms, and client systems.
+            I turn ideas into production-ready products from scalable SaaS platforms and AI-powered systems to complete client applications, websites and more.
           </p>
 
           {/* Action Pills (Magnetic) */}
           <div className="flex flex-wrap items-center gap-3.5 pt-2">
             <MagneticButton>
               <a
-                href="#work"
+                href="#project"
                 className="px-6 py-3.5 min-h-[44px] rounded-full bg-[var(--accent-pill)] text-[var(--accent-pill-text)] font-semibold text-sm hover:opacity-90 transition-opacity flex items-center gap-2 cursor-pointer shadow-lg shadow-black/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C83FF]"
               >
                 <span>Explore work</span>
@@ -222,9 +222,9 @@ export default function Hero({ onOpenContact }: HeroProps) {
       </div>
 
       {/* ─── 03. STATS ROW (COUNT-UP METRICS) & SCROLL CUE ─── */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto pt-12 mt-12 border-t border-[var(--border-color)] flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-        {/* Count-Up Metrics */}
-        <div className="grid grid-cols-3 gap-6 sm:gap-12">
+      {/* <div className="relative z-10 w-full max-w-6xl mx-auto pt-12 mt-12 border-t border-[var(--border-color)] flex flex-col md:flex-row justify-between items-start md:items-end gap-6"> */}
+      {/* Count-Up Metrics */}
+      {/* <div className="grid grid-cols-3 gap-6 sm:gap-12">
           <div>
             <div className="text-3xl sm:text-4xl font-extrabold font-mono text-[var(--text-primary)]">
               <CountUp end={10} suffix="+" />
@@ -251,10 +251,10 @@ export default function Hero({ onOpenContact }: HeroProps) {
               Privacy-first Gemini layer
             </div>
           </div>
-        </div>
+        </div> */}
 
-        {/* Scroll Cue */}
-        <a
+      {/* Scroll Cue */}
+      {/* <a
           href="#work"
           aria-label="Scroll to Work section"
           className="flex items-center gap-2 text-xs font-mono text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors group cursor-pointer"
@@ -264,8 +264,8 @@ export default function Hero({ onOpenContact }: HeroProps) {
             size={15}
             className="group-hover:translate-y-1 transition-transform animate-bounce"
           />
-        </a>
-      </div>
+        </a> */}
+      {/* </div> */}
     </section>
   );
 }

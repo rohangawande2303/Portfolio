@@ -27,7 +27,7 @@ export default function Work({ projects }: WorkSectionProps) {
       >
         <div>
           <div className="flex items-center gap-2 text-xs font-mono text-[#7C83FF] uppercase tracking-widest mb-3">
-            <span>02 — WORK</span>
+            <span>— WORK</span>
             <span className="w-1.5 h-1.5 rounded-full bg-[#7C83FF]" />
             <span>FEATURED PROJECTS</span>
           </div>

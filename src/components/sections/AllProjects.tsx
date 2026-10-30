@@ -34,7 +34,7 @@ export default function AllProjects({ projects }: AllProjectsProps) {
         className="space-y-4 max-w-3xl mb-14"
       >
         <div className="font-mono text-xs uppercase tracking-widest text-[#7C83FF] flex items-center gap-2">
-          <span>05 — PROJECTS</span>
+          <span>— PROJECTS</span>
           <span className="w-1.5 h-1.5 rounded-full bg-[#7C83FF]" />
           <span>COMPLETE ARCHIVE</span>
         </div>
@@ -83,7 +83,7 @@ export default function AllProjects({ projects }: AllProjectsProps) {
                       alt={project.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      className="object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center font-mono font-black text-2xl text-[var(--text-muted)]">

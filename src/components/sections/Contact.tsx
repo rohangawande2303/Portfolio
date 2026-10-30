@@ -42,7 +42,7 @@ export default function Contact({ onOpenContact }: ContactProps) {
         className="space-y-4 max-w-3xl mb-16"
       >
         <div className="font-mono text-xs uppercase tracking-widest text-[#7C83FF] flex items-center gap-2">
-          <span>06 — CONTACT</span>
+          <span>— CONTACT</span>
           <span className="w-1.5 h-1.5 rounded-full bg-[#7C83FF]" />
           <span>START A PROJECT</span>
         </div>

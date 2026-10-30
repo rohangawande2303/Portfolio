@@ -36,7 +36,7 @@ export default function About() {
       >
         <div>
           <div className="flex items-center gap-2 text-xs font-mono text-[#7C83FF] uppercase tracking-widest mb-3">
-            <span>03 — ABOUT</span>
+            <span>— ABOUT</span>
           </div>
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.04em] text-[var(--text-primary)] leading-[1.05]">
             Hi, I&apos;m{" "}
@@ -56,11 +56,11 @@ export default function About() {
         {/* Left Column: Bio Paragraphs & Social Buttons (5 cols) */}
         <div className="lg:col-span-4 space-y-6">
           <p className="text-base sm:text-lg text-[var(--text-primary)] font-normal leading-relaxed">
-            I am a self-taught full stack engineer with hands-on experience building complete solutions from requirements to cloud deployment. Every project in my portfolio is architected end-to-end by me.
+            I'm a Full Stack Developer who enjoys turning ideas into reliable, production-ready products. I've independently built and shipped 10+ client projects, taking ownership of the entire process — from understanding requirements and designing architecture to development, deployment, and ongoing improvements.
           </p>
 
           <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed font-light">
-            I specialize in relational data modeling with PostgreSQL, building robust high-throughput APIs with FastAPI and Node.js, and creating fluid, mobile-first web interfaces with Next.js and Tailwind CSS.
+            My work spans scalable SaaS platforms, secure backend systems, third-party integrations, and AI-powered applications. I focus on building thoughtful solutions with clean architecture, intuitive user experiences, and an emphasis on security, performance, and real-world usability.
           </p>
 
           {/* Action Links with accessible 44px min tap targets */}

@@ -21,7 +21,7 @@ export default function TestimonialsMarquee({
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12 mb-12">
         <div className="flex items-center gap-2 text-xs font-mono text-[var(--text-muted)] uppercase tracking-widest mb-3">
-          <span>02.5 — ENDORSEMENTS</span>
+          <span>— ENDORSEMENTS</span>
         </div>
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
           <div>

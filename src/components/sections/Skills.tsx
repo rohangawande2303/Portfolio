@@ -36,7 +36,7 @@ export default function Skills() {
         className="space-y-4 max-w-3xl mb-12"
       >
         <div className="font-mono text-xs uppercase tracking-widest text-[#7C83FF] flex items-center gap-2">
-          <span>04 — SKILLS</span>
+          <span>— SKILLS</span>
           <span className="w-1.5 h-1.5 rounded-full bg-[#7C83FF]" />
           <span>PRODUCTION STACK</span>
         </div>
@@ -59,11 +59,10 @@ export default function Skills() {
         <button
           type="button"
           onClick={() => handleFamilyClick("All")}
-          className={`px-4 py-2.5 min-h-[44px] rounded-full text-xs font-mono font-medium border transition-all duration-200 cursor-pointer flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C83FF] ${
-            selectedFamily === "All"
+          className={`px-4 py-2.5 min-h-[44px] rounded-full text-xs font-mono font-medium border transition-all duration-200 cursor-pointer flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C83FF] ${selectedFamily === "All"
               ? "bg-[var(--accent-pill)] text-[var(--accent-pill-text)] border-[var(--accent-pill)] shadow-md"
               : "bg-[var(--surface-card)] text-[var(--text-muted)] border-[var(--border-color)] hover:border-[var(--text-primary)] hover:text-[var(--text-primary)]"
-          }`}
+            }`}
         >
           <span>All Elements</span>
           <span className="text-[10px] opacity-70">({skills.length})</span>
@@ -84,11 +83,10 @@ export default function Skills() {
                 borderColor: isActive ? theme.text : undefined,
                 boxShadow: isActive ? `0 0 16px ${theme.glow}` : undefined,
               }}
-              className={`px-4 py-2.5 min-h-[44px] rounded-full text-xs font-mono font-medium border transition-all duration-200 cursor-pointer flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C83FF] ${
-                isActive
+              className={`px-4 py-2.5 min-h-[44px] rounded-full text-xs font-mono font-medium border transition-all duration-200 cursor-pointer flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C83FF] ${isActive
                   ? `${theme.badge} ring-1 ring-offset-1 ring-offset-[#0B0B0F]`
                   : "bg-[var(--surface-card)] text-[var(--text-muted)] border-[var(--border-color)] hover:border-[var(--border-color-strong)] hover:text-[var(--text-primary)]"
-              }`}
+                }`}
             >
               <span
                 style={{ backgroundColor: theme.text }}

@@ -65,14 +65,15 @@ export default function HomePage() {
         {/* Section 01: Hero Section (No photo, abstract code stack, heavy sans + serif italic) */}
         <Hero onOpenContact={() => setIsContactOpen(true)} />
 
+        {/* Section 03: About (Hanging Lanyard ID Card with 3D Flip, Quick Facts, Quote) */}
+        <About />
+
         {/* Section 02: Work (Featured Projects Accordion) */}
         <Work projects={projects} />
 
         {/* Section 02.5: Testimonials (No nav item, between Work and About) */}
         <TestimonialsMarquee testimonials={testimonials} />
 
-        {/* Section 03: About (Hanging Lanyard ID Card with 3D Flip, Quick Facts, Quote) */}
-        <About />
 
         {/* Section 04: Skills (Periodic Table, 6 Families, Real Logos, Detail Panel) */}
         <Skills />
