@@ -260,8 +260,7 @@ export const projects: Project[] = [
     // TODO: Add high-resolution screenshots to public/images/projects/goatwear-streetwear-store/
     gallery: [],
     featured: true,
-    liveUrl: "https://aamhi-khandeshi.vercel.app/",
-    githubUrl: "https://github.com/rohangawande2303/Food-app-Aamhi-Khandeshi-",
+    liveUrl: "https://02nx1x-pz.myshopify.com/",
   },
 
   // ─── 04. FOOD ORDERING APP (AAMHI KHANDESHI) ────────────────────────────────
@@ -323,10 +322,107 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/rohangawande2303/Food-app-Aamhi-Khandeshi-",
   },
 
+  // ─── 05. TRIDENT PROP STRATEGY: REAL ESTATE ADVISORY WEBSITE ────────────────
+  {
+    slug: "trident-prop-strategy-website",
+    order: 5,
+    title: "Trident Prop Strategy: Real Estate Advisory Website",
+    category: "Website · Client Project",
+    year: "2026",
+    role: "Freelance Web Developer & Designer",
+    duration: "3 Days",
+    summary:
+      "Conversion-focused single-page website for a real estate sales advisory firm in Kalyan, KDMC and MMR, with glassmorphism UI, an interactive micro-market explorer, a capital recovery calculator, and lead capture straight into Google Sheets.",
+    description:
+      "Designed and built a premium single-page website for Trident Prop Strategy, a real estate mandate and sales advisory firm that helps developers move stalled inventory in Kalyan, KDMC and the wider MMR. Starting from the client's logo and AI-generated reference screens, I combined them into one cohesive design system based on the brand's navy and gold palette, with a glassmorphism UI and smooth scroll-reveal animations. The site presents the firm's 4-phase mandate process, an interactive micro-market section where each location shows its own data, and a capital recovery calculator that lets developers see the impact of faster absorption. A contact form sends every lead directly to a Google Sheet through a Google Apps Script endpoint, so the client can manage enquiries without a paid CRM or backend.",
+    longDescription:
+      "A fast, mobile-first marketing website built for a real estate advisory startup working on a tight budget. The goal was to give the client a credible, high-trust online presence that turns developer enquiries into leads from day one. Built with Next.js and deployed on Vercel with a GitHub repository for continuous deployment, and a custom domain linked to the project. The structure is a single page for now, designed so more pages can be added later without rework.",
+    highlights: [
+      "Brand-driven design system built from the client's logo colors (navy and gold gradient) with glassmorphism cards",
+      "Interactive micro-market section: selecting a location reveals that location's data box",
+      "Capital recovery calculator showing developers the value of faster inventory absorption",
+      "Lead capture form that writes directly into Google Sheets via Apps Script and a Next.js API route",
+      "Mobile-first responsive layout with scroll-reveal animations and a floating WhatsApp button on larger screens",
+      "Zero-cost lead management and automatic Vercel deployments from GitHub",
+    ],
+    features: [
+      "Hero section with a skyline visual, a clear value proposition, and primary calls to action",
+      "4-phase mandate process section (Strategy, Team & CP Activation, Sales Tracking, Audit) with equal-height cards and aligned milestone footers",
+      "Micro-market explorer covering Kalyan, KDMC and MMR locations, with a data panel that updates on click",
+      "Capital recovery calculator section placed right after the Approach section",
+      "Contact form posting to a Next.js `/api/lead` route that forwards submissions to a Google Sheet through Google Apps Script",
+      "Floating WhatsApp button for instant enquiries on desktop and tablet",
+      "Custom gold gradient styling for buttons and highlighted headings on a deep navy background",
+      "Reusable UI components (section headings, glass cards, reveal animations) so new sections and pages stay consistent",
+      "Fully responsive layout, tuned separately for mobile, tablet and desktop",
+    ],
+    challenges: [
+      "Merging two different AI-generated reference designs into one consistent, professional look while staying on brand",
+      "Keeping the single page rich in content and interaction without clutter or slow load times",
+      "Giving the client a no-cost, no-backend way to receive and manage leads reliably",
+      "Keeping card layouts visually aligned across breakpoints when text length differs between cards",
+    ],
+    results: [
+      "Delivered a complete, live client website covering design, structure, development and deployment",
+      "Leads from the contact form land in a Google Sheet in real time, with no extra tools or monthly cost",
+      "Deployed on Vercel with GitHub-based CI/CD, ready for the client's custom domain",
+    ],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vercel",
+      "GitHub",
+      "Google Apps Script",
+      "Google Sheets",
+      "Lucide Icons",
+    ],
+    // Main project cover image
+    image: "/assets/portfolio/trident/1.png", // TODO: add screenshot
+    // Additional project screenshots
+    gallery: [
+      {
+        src: "/assets/portfolio/trident/1.png",
+        alt: "Trident Prop Strategy hero section screenshot",
+        caption: "Hero Section",
+      },
+      {
+        src: "/assets/portfolio/trident/2.png",
+        alt: "Trident Prop Strategy mandate process screenshot",
+        caption: "How it works",
+      },
+      {
+        src: "/assets/portfolio/trident/3.png",
+        alt: "Trident Prop Strategy capital recovery calculator screenshot",
+        caption: "Capital Recovery Calculator",
+      },
+      {
+        src: "/assets/portfolio/trident/4.png",
+        alt: "Real Estate Data Matrix screenshot",
+        caption: "Data Matrix",
+      },
+      {
+        src: "/assets/portfolio/trident/5.png",
+        alt: "Proven 4-step Process screenshot",
+        caption: "Steps Trident Follows",
+      },
+      {
+        src: "/assets/portfolio/trident/6.png",
+        alt: "Trident Prop Contact form screenshot",
+        caption: "Contact Form",
+      },
+    ],
+    featured: false,
+    liveUrl: "https://trident-propstrategy-website.vercel.app",
+    githubUrl: "https://github.com/tridentpropstrategy/Trident-propstrategy-website-", // TODO: add the repo link, or remove this line if the client repo is private
+  },
+
+
+
   // ─── 05. YOGA APPOINTMENT BOOKING WEB APP ───────────────────────────────────
   {
     slug: "appointment-app",
-    order: 5,
+    order: 6,
     title: "Yoga Appointment Booking App",
     category: "Web App · Booking · Auth",
     year: "2024",
@@ -364,7 +460,7 @@ export const projects: Project[] = [
   // ─── 06. DIGITAL MARKETING AGENCY (SOCIAL PULSE) ────────────────────────────
   {
     slug: "social-pulse-agency",
-    order: 6,
+    order: 7,
     title: "Digital Marketing App (Social Pulse Agency)",
     category: "Agency · Web · Lead Gen",
     year: "2024",
@@ -428,7 +524,7 @@ export const projects: Project[] = [
   // ─── LANDMARK ARISTO ────────────────────────────────────────────────────────
   {
     slug: "landmark-aristo",
-    order: 7,
+    order: 8,
     title: "Landmark Aristo",
     category: "Landing page · Real Estate",
     year: "2026",
@@ -498,7 +594,7 @@ export const projects: Project[] = [
   // ─── SSL BELLAGIO ───────────────────────────────────────────────────────────
   {
     slug: "ssl-bellagio",
-    order: 8,
+    order: 9,
     title: "SSL Bellagio",
     category: "Landing page· Real Estate",
     year: "2026",
@@ -558,7 +654,7 @@ export const projects: Project[] = [
   // ─── 09. HUBTOWN TRADE CENTRE ───────────────────────────────────────────────
   {
     slug: "trade-centre",
-    order: 9,
+    order: 10,
     title: "Hubtown Trade Centre",
     category: "Commercial Real Estate · Landing Page",
     year: "2025",
@@ -596,7 +692,7 @@ export const projects: Project[] = [
   // ─── 10. BEQUBE CONSULTANCY ────────────────────────────────────────────────
   {
     slug: "beqube",
-    order: 10,
+    order: 11,
     title: "Beqube Consultancy Website",
     category: "Consultancy · Web",
     year: "2025",
@@ -634,7 +730,7 @@ export const projects: Project[] = [
   // ─── 11. KD RMC LLP ────────────────────────────────────────────────────────
   {
     slug: "kd-rmc-llp",
-    order: 11,
+    order: 12,
     title: "KD RMC LLP ",
     category: "Industrial · Construction Materials",
     year: "2025",
@@ -710,7 +806,7 @@ export const projects: Project[] = [
   // ─── 08. RUTU GROUP (SSL BELLAGIO) ──────────────────────────────────────────
   {
     slug: "rutu-group",
-    order: 12,
+    order: 13,
     title: "Rutu Group Website",
     category: "Corporate · Real Estate",
     year: "2024",
@@ -799,17 +895,24 @@ export const projects: Project[] = [
  */
 export const clientSites: ClientSite[] = [
   {
+    title: "Trident Propstrategy",
+    client: "Trident Propstrategy",
+    url: "https://www.landmarkaristo.com/",
+    image: "/assets/portfolio/landmark/1.png",
+    category: "Corporate Advisory",
+  },
+  {
     title: "Landmark Aristo",
     client: "Landmark Group",
     url: "https://www.landmarkaristo.com/",
-    image: "/assets/portfolio/aarav-realty.png",
+    image: "/assets/portfolio/landmark/1.png",
     category: "Luxury Residential",
   },
   {
     title: "SSL Bellagio",
     client: "SSL Realty",
     url: "https://www.sslbellagio.com/",
-    image: "/assets/portfolio/rutu-group.png",
+    image: "/assets/portfolio/bellagio/1.png",
     category: "Premium Towers",
   },
   {
